@@ -7,8 +7,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello Resurgens!</title>
-    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <title>resurgens.io</title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/phoenix.css") %>">
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/application.css") %>">
   </head>
 
   <body>
@@ -30,6 +31,6 @@
       </main>
 
     </div> <!-- /container -->
-    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/application.js") %>"></script>
   </body>
 </html>
