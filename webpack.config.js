@@ -1,6 +1,7 @@
 'use strict'
 
 var path = require('path')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var webpack = require('webpack')
 
 function root(dest) { return path.resolve(__dirname, dest) }
@@ -9,6 +10,7 @@ function web(dest) { return root('web/static/' + dest) }
 var config = module.exports = {
   entry: {
     application: [
+      web('css/application.sass'),
       web('js/application.js')
     ],
   },
@@ -19,7 +21,7 @@ var config = module.exports = {
   },
 
   resolve: {
-    extension: ['', '.js'],
+    extension: ['', '.js', '.sass'],
     modulesDirectories: ['node_modules']
   },
 
@@ -34,10 +36,17 @@ var config = module.exports = {
           cacheDirectory: true,
           presets: ['react', 'es2015']
         }
+      },
+      {
+        test: /\.sass$/,
+        loader: ExtractTextPlugin.extract('style', 'css!sass?indentedSyntax&includePaths[]=' + __dirname +  '/node_modules')
       }
     ]
   },
-  plugins: []
+
+  plugins: [
+    new ExtractTextPlugin('css/application.css')
+  ]
 }
 
 if (process.env.NODE_ENV === 'production') {
