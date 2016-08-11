@@ -1,0 +1,22 @@
+{
+  "name": "resurgens",
+  "version": "1.0.0",
+  "description": "My personal website",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davelively14/resurgens.git"
+  },
+  "author": "Dave Lively",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davelively14/resurgens/issues"
+  },
+  "homepage": "https://github.com/davelively14/resurgens#readme"
+}
