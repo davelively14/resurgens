@@ -1,5 +1,16 @@
-$primary-color: blue;
+$myColor: #009a82;
+$myString: " some text here ";
+$myFontSize: 13px;
+$myMargin: 0px auto;
+$myWidth: 1200px;
 
-.testing123 {
-  color: $primary-color;
+h1 {
+	color: $myColor;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	width: $myWidth;
+	margin: $myMargin;
 }
