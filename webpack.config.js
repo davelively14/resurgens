@@ -10,7 +10,7 @@ function web(dest) { return root('web/static/' + dest) }
 var config = module.exports = {
   entry: {
     application: [
-      web('css/application.scss'),
+      web('stylesheets/application.scss'),
       web('js/application.js')
     ],
   },
