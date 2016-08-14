@@ -3,9 +3,33 @@
   <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
 </div>
 
-<div class="container">
-  <h1>Some tests</h1>
-  <p>
-    Testing
-  </p>
+<div class="grid">
+  <div class="grid__item grid__item--xs-span-1 bg_first">
+    xs span 1
+  </div>
+  <div class="grid__item grid__item--xs-span-2 bg_second">
+    xs span 2
+  </div>
+  <div class="grid__item grid__item--xs-span-3 bg_first">
+    xs span 3
+  </div>
+  <div class="grid__item grid__item--xs-span-6 bg_second">
+    <div class="grid">
+      <div class="grid__item grid__item--xs-span-3">
+        Sub-6 1
+      </div>
+      <div class="grid__item grid__item--xs-span-9 bg_first">
+        Sub-6 2
+      </div>
+    </div>
+  </div>
+  <div class="grid__item grid__item--xs-span-6 bg_first">
+    xs span 6
+  </div>
+  <div class="grid__item grid__item--xs-span-3 bg_second">
+    xs span 3
+  </div>
+  <div class="grid__item grid__item--xs-span-3 bg_first">
+    xs span 3
+  </div>
 </div>
