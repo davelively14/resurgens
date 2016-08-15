@@ -1,8 +1,6 @@
-<div class="jumbotron">
-  <h2><%= gettext "Welcome to %{name}", name: "Phoenix!" %></h2>
+<div class="top_bg">
+  <h1 class="title-skew">Welcome to my website portfolio</h1>
 </div>
-
-<h1 class="title-reg">Welcome to my website portfolio</h1>
 
 <div class="grid">
   <div class="grid__item grid__item--xs-span-1 bg_first">

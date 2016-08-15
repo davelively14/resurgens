@@ -6,6 +6,12 @@ $rotation: -7deg;
 
 @mixin font-fam-pri() {
   font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+}
+
+@mixin font-fam-title() {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
 }
 
 .title-skew {
@@ -16,7 +22,14 @@ $rotation: -7deg;
 
 .title-reg {
   text-align: center;
-  @include font-fam-pri;
+  @include font-fam-title;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+.top_bg {
+  background-color: orange;
+  padding: 100px 0
 }
 
 body {
