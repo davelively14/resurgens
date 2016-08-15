@@ -10,6 +10,7 @@
     <title>resurgens.io</title>
     <!-- <link rel="stylesheet" href="<%= static_path(@conn, "/css/phoenix.css") %>"> -->
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/application.css") %>">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
   </head>
 
   <body>

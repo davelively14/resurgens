@@ -45,7 +45,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(1);
-	module.exports = __webpack_require__(5);
+	module.exports = __webpack_require__(4);
 
 
 /***/ },
@@ -57,8 +57,7 @@
 /***/ },
 /* 2 */,
 /* 3 */,
-/* 4 */,
-/* 5 */
+/* 4 */
 /***/ function(module, exports) {
 
 	"use strict";
