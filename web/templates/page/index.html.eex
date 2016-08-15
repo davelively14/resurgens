@@ -1,5 +1,6 @@
 <div class="top_bg">
-  <h1 class="title-skew">Welcome to my website portfolio</h1>
+  <div class="title-skew">resurgens.io</div>
+  <div class="subtitle-skew">Welcome to my portfolio page.</div>
 </div>
 
 <div class="grid">

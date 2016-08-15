@@ -2,8 +2,6 @@
 // - - typography
 // global typography styles
 
-$rotation: -7deg;
-
 @mixin font-fam-pri() {
   font-family: 'Roboto', sans-serif;
   font-weight: lighter;
@@ -15,21 +13,26 @@ $rotation: -7deg;
 }
 
 .title-skew {
-  transform: skewY($rotation);
+  transform: skewY(-4deg);
   text-align: center;
-  @include font-fam-pri;
+  font-size: 300%;
+  font-size: 6vw;
+  @include font-fam-title;
 };
+
+.subtitle-skew {
+  transform: skewY(-4deg);
+  text-align: center;
+  font-size: 200%;
+  font-size: 4vw;
+  @include font-fam-pri;
+}
 
 .title-reg {
   text-align: center;
   @include font-fam-title;
   color: white;
   text-shadow: 2px 2px black;
-}
-
-.top_bg {
-  background-color: orange;
-  padding: 100px 0
 }
 
 body {
