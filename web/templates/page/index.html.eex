@@ -1,6 +1,15 @@
-<div class="top_bg">
+<div class="top-bg">
   <div class="title-skew">resurgens.io</div>
   <div class="subtitle-skew">Welcome to my portfolio page.</div>
+</div>
+
+<div class="submenu-start grid">
+  <div class="grid__item grid__item--xs-span-9">
+
+  </div>
+  <div class="grid__item grid__item--xs-span-3">
+    <%= link "Home", to: page_path(@conn, :index), class: "menu-item" %>
+  </div>
 </div>
 
 <div class="grid">

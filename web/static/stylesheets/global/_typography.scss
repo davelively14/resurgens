@@ -16,7 +16,7 @@
   transform: skewY(-4deg);
   text-align: center;
   font-size: 300%;
-  font-size: 6vw;
+  font-size: 7vw;
   @include font-fam-title;
 };
 
@@ -24,8 +24,23 @@
   transform: skewY(-4deg);
   text-align: center;
   font-size: 200%;
-  font-size: 4vw;
+  font-size: 5vw;
   @include font-fam-pri;
+}
+
+.menu-item {
+  font-size: 150%;
+  font-size: 2vw;
+  float: right;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: white;
 }
 
 .title-reg {
