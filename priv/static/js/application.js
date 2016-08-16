@@ -45,7 +45,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(1);
-	module.exports = __webpack_require__(5);
+	module.exports = __webpack_require__(4);
 
 
 /***/ },
@@ -57,13 +57,12 @@
 /***/ },
 /* 2 */,
 /* 3 */,
-/* 4 */,
-/* 5 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	var _sticky_menu = __webpack_require__(6);
+	var _sticky_menu = __webpack_require__(5);
 
 	var _sticky_menu2 = _interopRequireDefault(_sticky_menu);
 
@@ -105,7 +104,7 @@
 	// }
 
 /***/ },
-/* 6 */
+/* 5 */
 /***/ function(module, exports) {
 
 	"use strict";

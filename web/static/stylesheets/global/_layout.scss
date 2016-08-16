@@ -2,21 +2,6 @@
 // - - layout
 // global layout classes - height, width, padding, margin, etc.
 
-// Background color
-$first_bg: cyan;
-$second_bg: yellow;
-$primary_bg: orange;
-
-// Breakpoint setup
-$breakpoints: (
-  xs: 32rem,
-  sm: 48rem,
-  md: 72rem,
-  lg: 96rem,
-  xl: 102rem,
-  xx: 120rem
-);
-
 @mixin break($size) {
   @media (min-width: map-get($breakpoints, $size)) {
     @content;
@@ -30,9 +15,6 @@ $breakpoints: (
     display: block;
   };
 };
-
-// This is the size of the grid.
-$items: 12;
 
 .grid {
   display: flex;
@@ -49,11 +31,11 @@ $items: 12;
 
 // Create all the grid elements
 @each $key, $value in $breakpoints {
-  @for $i from 1 through $items {
+  @for $i from 1 through $grid_size {
     .grid__item--#{$key}-span-#{$i} {
       flex: 0 0 100%;
       @include break($key) {
-        flex: 0 0 #{($i / $items * 100) + "%"};
+        flex: 0 0 #{($i / $grid_size * 100) + "%"};
       }
     }
   }
@@ -65,7 +47,7 @@ $items: 12;
 
 // Background areas
 .top-bg {
-  background-color: orange;
+  background-color: $primary_bg;
   padding: 30px 0 40px 0px;
   padding: 2vw 0 3vw 0;
   height: 300px;
@@ -82,7 +64,10 @@ $items: 12;
 
 .main, .submenu-start {
   position: relative;
-  background-color: white;
+}
+
+.main {
+  background-color: $alternate_bg;
 }
 
 .submenu-start {
@@ -97,7 +82,7 @@ $items: 12;
   width: 100%;
   top: 0;
   margin-bottom: -40px;
-  background-color: orange;
+  background-color: $primary_bg;
 }
 
 .main-stick {

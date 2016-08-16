@@ -5,3 +5,12 @@
 body {
   margin: 0;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: $alternate_text;
+}

@@ -2,9 +2,6 @@
 // - - typography
 // global typography styles
 
-$primary_text: black;
-$alternate_text: white;
-
 @mixin font-fam-pri() {
   font-family: 'Roboto', sans-serif;
   font-weight: lighter;
@@ -38,15 +35,6 @@ $alternate_text: white;
   float: right;
   padding: 0 10px;
   background-color: orange;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-a:hover {
-  color: $alternate_text;
 }
 
 .title-reg {

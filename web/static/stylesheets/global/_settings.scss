@@ -1,3 +1,26 @@
 // - - - - - - - - - - - - - - - - - - -
 // - - settings
 // global maps and variables
+
+// Breakpoint setup
+$breakpoints: (
+  xs: 32rem,
+  sm: 48rem,
+  md: 72rem,
+  lg: 96rem,
+  xl: 102rem,
+  xx: 120rem
+);
+
+// This is the size of the layout grid.
+$grid_size: 12;
+
+// Background color
+$first_bg: cyan;
+$second_bg: yellow;
+$primary_bg: orange;
+$alternate_bg: white;
+
+// Text colors
+$primary_text: black;
+$alternate_text: white;
