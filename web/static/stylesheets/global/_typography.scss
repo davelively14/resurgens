@@ -2,14 +2,19 @@
 // - - typography
 // global typography styles
 
+$primary_text: black;
+$alternate_text: white;
+
 @mixin font-fam-pri() {
   font-family: 'Roboto', sans-serif;
   font-weight: lighter;
+  color: $primary_text;
 }
 
 @mixin font-fam-title() {
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
+  color: $primary_text;
 }
 
 .title-skew {
@@ -40,7 +45,7 @@ a {
 }
 
 a:hover {
-  color: white;
+  color: $alternate_text;
 }
 
 .title-reg {
