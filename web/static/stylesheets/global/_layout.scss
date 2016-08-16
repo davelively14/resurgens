@@ -68,15 +68,25 @@ $items: 12;
   background-color: orange;
   padding: 30px 0 40px 0px;
   padding: 2vw 0 3vw 0;
+  height: 300px;
+  width: 100vw;
+  position: fixed;
+  z-index: -100;
+}
+
+.top-bg-container {
+  position: relative;
   height: 250px;
+  width: 100vw;
 }
 
 .main, .submenu-start {
   position: relative;
+  background-color: white;
 }
 
 .submenu-start {
-  background-color: orange;
+  background-color: transparent;
   z-index: 100;
   padding: 8px;
   height: 40px;
@@ -87,6 +97,7 @@ $items: 12;
   width: 100%;
   top: 0;
   margin-bottom: -40px;
+  background-color: orange;
 }
 
 .main-stick {

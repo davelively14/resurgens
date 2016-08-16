@@ -66,9 +66,9 @@
 	var menu_start = document.getElementById("menu"),
 	    menu_stick = "submenu-stick",
 	    main_stick = "main-stick",
-	    top_bg = document.getElementsByClassName("top-bg")[0],
+	    header = document.getElementsByClassName("top-bg-container")[0],
 	    main = document.getElementById("main"),
-	    top_style = window.getComputedStyle(top_bg),
+	    top_style = window.getComputedStyle(header),
 	    header = parseInt(top_style.getPropertyValue('height'));
 
 	window.addEventListener("scroll", function (e) {

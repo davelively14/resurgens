@@ -1,6 +1,8 @@
-<div class="top-bg">
-  <div class="title-skew">resurgens.io</div>
-  <div class="subtitle-skew">This subtext is temporary.</div>
+<div class="top-bg-container">
+  <div class="top-bg">
+    <div class="title-skew">resurgens.io</div>
+    <div class="subtitle-skew">This subtext is temporary.</div>
+  </div>
 </div>
 
 <div class="submenu-start grid" id="menu">
