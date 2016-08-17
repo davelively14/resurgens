@@ -5,7 +5,9 @@
   </div>
 </div>
 
-<div class="submenu-start grid" id="menu">
+<main id="menu_container" role="main"></main>
+
+<!-- <div class="submenu-start grid" id="menu">
   <div class="grid__item grid__item--xs-span-3">
 
   </div>
@@ -14,7 +16,7 @@
     <a href="#" class="menu-item">About</a>
     <%= link "Home", to: page_path(@conn, :index), class: "menu-item" %>
   </div>
-</div>
+</div> -->
 
 <div class="main" id="main">
   <div class="grid">

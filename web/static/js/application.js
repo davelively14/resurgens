@@ -1,6 +1,26 @@
-import StickyMenu from "./sticky_menu.js"
+// var React = require('react').default
+// var ReactDOM = require('react-dom')
+// var Menu = require('./components/menu').default
 
-StickyMenu.onReady()
+import React from 'react'
+import {render} from 'react-dom'
+import {Provider} from 'react-redux'
+import {createStore} from 'redux'
+import resurgensApp from './reducers/index.js'
+import MenuContainer from './containers/menu_container'
+
+let store = createStore(resurgensApp)
+
+render(
+  <Provider store={store}>
+    <MenuContainer />
+  </Provider>,
+  document.getElementById("menu_container")
+)
+
+// import StickyMenu from "./sticky_menu.js"
+//
+// StickyMenu.onReady()
 
 // var menu_start = document.getElementById("menu"),
 //     menu_stick = "submenu-stick",

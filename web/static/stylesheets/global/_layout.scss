@@ -62,7 +62,8 @@
   width: 100vw;
 }
 
-.main, .submenu-start {
+// TODO remove .submenu-start
+.main, .submenu-start, .menu {
   position: relative;
 }
 
@@ -70,6 +71,7 @@
   background-color: $alternate_bg;
 }
 
+// TODO remove .submenu-start
 .submenu-start {
   background-color: transparent;
   z-index: 100;
@@ -77,6 +79,7 @@
   height: 40px;
 }
 
+// TODO remove .submenu-stick
 .submenu-stick {
   position: fixed;
   width: 100%;
@@ -92,4 +95,30 @@
 .container {
   max-width: 75%;
   margin: auto;
+}
+
+$menu_height: 40px;
+
+.menu {
+  position: absolute;
+  background-color: transparent;
+  z-index: 1;
+  padding: 8px;
+  height: $menu_height;
+}
+
+.menu-container {
+  position: relative;
+  z-index: -1;
+  padding: 8px;
+  height: $menu_height
+}
+
+.menu-stick {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  margin-bottom: -40px;
+  background-color: $primary_bg;
+  z-index: 100;
 }
