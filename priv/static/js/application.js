@@ -23176,6 +23176,8 @@
 
 	var _menu2 = _interopRequireDefault(_menu);
 
+	var _index = __webpack_require__(207);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var mapStateToProps = function mapStateToProps(state) {
@@ -23184,7 +23186,18 @@
 	  };
 	};
 
-	var MenuContainer = (0, _reactRedux.connect)(mapStateToProps)(_menu2.default);
+	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+	  return {
+	    makeSticky: function makeSticky() {
+	      dispatch((0, _index.makeSticky)());
+	    },
+	    makeUnsticky: function makeUnsticky() {
+	      dispatch((0, _index.makeUnsticky)());
+	    }
+	  };
+	};
+
+	var MenuContainer = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_menu2.default);
 
 	exports.default = MenuContainer;
 
@@ -23202,8 +23215,6 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _actions = __webpack_require__(207);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Menu = _react2.default.createClass({
@@ -23218,49 +23229,36 @@
 	    var menuTop = document.getElementById("menu_container").getBoundingClientRect().top;
 
 	    if (menuTop < 0 && !this.props.sticky) {
-	      dispatch((0, _actions.makeSticky)());
-	      console.log("Made sticky");
+	      this.props.makeSticky();
 	    } else if (menuTop >= 0 && this.props.sticky) {
-	      dispatch((0, _actions.makeUnsticky)());
-	      console.log("Made unsticky");
+	      this.props.makeUnsticky();
 	    }
 	  },
 	  renderMenu: function renderMenu(menuClass) {
 	    return _react2.default.createElement(
 	      'div',
-	      { className: menuClass + " grid", ref: 'menu' },
-	      _react2.default.createElement('div', { className: 'grid__item grid__item--xs-span-3' }),
+	      { className: menuClass, ref: 'menu', id: 'menu' },
 	      _react2.default.createElement(
-	        'div',
-	        { className: 'grid__item grid__item--xs-span-9' },
-	        _react2.default.createElement(
-	          'a',
-	          { href: '#', className: 'menu-item' },
-	          'Portfolio'
-	        ),
-	        _react2.default.createElement(
-	          'a',
-	          { href: '#', className: 'menu-item' },
-	          'About'
-	        ),
-	        _react2.default.createElement(
-	          'a',
-	          { href: '#', className: 'menu-item' },
-	          'Home'
-	        )
+	        'a',
+	        { href: '#', className: 'menu-item' },
+	        'Portfolio'
+	      ),
+	      _react2.default.createElement(
+	        'a',
+	        { href: '#', className: 'menu-item' },
+	        'About'
+	      ),
+	      _react2.default.createElement(
+	        'a',
+	        { href: '#', className: 'menu-item' },
+	        'Home'
 	      )
 	    );
 	  },
 	  menu: function menu() {
-	    var cont_pos = document.getElementById("menu_container").getBoundingClientRect().top;
-
-	    if (cont_pos < 0) {
-	      console.log(cont_pos);
-	      console.log(this.renderMenu("menu menu-stick"));
-	      return this.renderMenu("menu menu-stick");
+	    if (this.props.sticky) {
+	      return this.renderMenu("menu menu-sticky");
 	    } else {
-	      console.log(cont_pos);
-	      console.log(this.renderMenu("menu"));
 	      return this.renderMenu("menu");
 	    }
 	  },
