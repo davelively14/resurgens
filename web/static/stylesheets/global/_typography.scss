@@ -28,6 +28,13 @@
   @include font-fam-pri;
 }
 
+.image-text {
+  @include font-fam-pri;
+  font-size: 5vw;
+  color: $alternate_text;
+  text-shadow: 0.1vw 0.1vw black;
+}
+
 .menu-item {
   font-size: 125%;
   float: right;

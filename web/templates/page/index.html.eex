@@ -12,41 +12,20 @@
   <div class="intro-block">
     <span class="intro-text">This is a placeholder for all of this, but what happens if we have to wrap this text. And then we wrap it again? Does it all work?</span>
   </div>
-  <div class="image-block-wrapper">
-    <div class="image-block">
-
-    </div>
+  <br>
+  <div class="image-block-1">
+    <span class="image-text">Welcome to Atlanta</span>
   </div>
-  <!-- <div class="grid">
-    <div class="grid__item grid__item--xs-span-1 bg_first">
-      xs span 1
-    </div>
-    <div class="grid__item grid__item--xs-span-2 bg_second">
-      xs span 2
-    </div>
-    <div class="grid__item grid__item--xs-span-3 bg_first">
-      xs span 3
-    </div>
-    <div class="grid__item grid__item--xs-span-6 bg_second">
-      <div class="grid">
-        <div class="grid__item grid__item--xs-span-3">
-          Sub-6 1
-        </div>
-        <div class="grid__item grid__item--xs-span-9 bg_first">
-          Sub-6 2
-        </div>
-      </div>
-    </div>
-    <div class="grid__item grid__item--xs-span-6 bg_first">
-      xs span 6
-    </div>
-    <div class="grid__item grid__item--xs-span-3 bg_second">
-      xs span 3
-    </div>
-    <div class="grid__item grid__item--xs-span-3 bg_first">
-      xs span 3
-    </div>
-  </div> -->
+  <br>
+  <div class="intro-block">
+    <span class="intro-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest? Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo.</span>
+  </div>
+  <br>
+  <div class="image-block-2">
+    <span class="image-text">Welcome to Grant Park</span>
+  </div>
+  <br>
+
   <div class="container">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest? Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo. Totum autem id externum est, et quod externum, id in casu est. Ut nemo dubitet, eorum omnia officia quo spectare, quid sequi, quid fugere debeant? Ille enim occurrentia nescio quae comminiscebatur; Duo Reges: constructio interrete. Ergo omni animali illud, quod appetiti positum est in eo, quod naturae est accommodatum. Non risu potius quam oratione eiciendum? Primum non saepe, deinde quae est ista relaxatio, cum et praeteriti doloris memoria recens est et futuri atque inpendentis torquet timor? Etsi qui potest intellegi aut cogitari esse aliquod animal, quod se oderit? Experiamur igitur, inquit, etsi habet haec Stoicorum ratio difficilius quiddam et obscurius. Te autem hortamur omnes, currentem quidem, ut spero, ut eos, quos novisse vis, imitari etiam velis. </p>
 

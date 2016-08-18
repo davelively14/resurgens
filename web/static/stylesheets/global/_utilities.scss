@@ -25,6 +25,18 @@
   display: table;
   display: table-cell;
   vertical-align: middle;
+  text-align: center;
+}
+
+@mixin image-block-base() {
+  width: 100vw;
+  height: $block_height;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  @include verticle-align-center;
 }
 
 // - - - - - - - - - - - - - - - - - - -
