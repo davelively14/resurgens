@@ -20,12 +20,20 @@ const Menu = React.createClass({
     }
   },
 
+  renderMenuItems(ref, name) {
+    console.log(ref + ", ", name);
+    return (
+      <a href={"#" + ref} className="menu-item" key={ref}>{name}</a>
+    )
+  },
+
   renderMenu(menuClass) {
+    var menuContent = this.props.menuContent
     return (
       <div className={menuClass} ref="menu" id="menu">
-        <a href="#portfolio" className="menu-item">Portfolio</a>
-        <a href="#about" className="menu-item">About</a>
-        <a href="#home" className="menu-item">Home</a>
+        {menuContent.map(item => {
+          return(this.renderMenuItems(item.ref, item.name))
+        })}
       </div>
     )
   },

@@ -80,13 +80,11 @@ $block_height: 30vw;
 }
 
 .image-block-1 {
-  background-image: url("http://wallpapercave.com/wp/Sd3rbbg.jpg");
-  @include image-block-base;
+  @include image-block("http://wallpapercave.com/wp/Sd3rbbg.jpg");
 }
 
 .image-block-2 {
-  background-image: url("https://littlepebble.files.wordpress.com/2011/02/milledge-fountain-not-mine.jpg");
-  @include image-block-base;
+  @include image-block("https://littlepebble.files.wordpress.com/2011/02/milledge-fountain-not-mine.jpg");
 }
 
 .content-block {

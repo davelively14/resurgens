@@ -4,7 +4,8 @@ import {makeSticky, makeUnsticky} from '../actions/index'
 
 const mapStateToProps = (state) => {
   return {
-    sticky: state.menu.sticky
+    sticky: state.menu.sticky,
+    menuContent: state.menu.menuContent
   }
 }
 

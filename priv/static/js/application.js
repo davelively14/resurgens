@@ -23092,13 +23092,23 @@
 /* 204 */
 /***/ function(module, exports) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	var initialState = {
-	  sticky: false
+	  sticky: false,
+	  menuContent: [{
+	    ref: "portfolio",
+	    name: "Portfolio"
+	  }, {
+	    ref: "about",
+	    name: "About"
+	  }, {
+	    ref: "home",
+	    name: "Home"
+	  }]
 	};
 
 	var menu = function menu() {
@@ -23145,7 +23155,8 @@
 
 	var mapStateToProps = function mapStateToProps(state) {
 	  return {
-	    sticky: state.menu.sticky
+	    sticky: state.menu.sticky,
+	    menuContent: state.menu.menuContent
 	  };
 	};
 
@@ -23197,25 +23208,24 @@
 	      this.props.makeUnsticky();
 	    }
 	  },
+	  renderMenuItems: function renderMenuItems(ref, name) {
+	    console.log(ref + ", ", name);
+	    return _react2.default.createElement(
+	      'a',
+	      { href: "#" + ref, className: 'menu-item', key: ref },
+	      name
+	    );
+	  },
 	  renderMenu: function renderMenu(menuClass) {
+	    var _this = this;
+
+	    var menuContent = this.props.menuContent;
 	    return _react2.default.createElement(
 	      'div',
 	      { className: menuClass, ref: 'menu', id: 'menu' },
-	      _react2.default.createElement(
-	        'a',
-	        { href: '#portfolio', className: 'menu-item' },
-	        'Portfolio'
-	      ),
-	      _react2.default.createElement(
-	        'a',
-	        { href: '#about', className: 'menu-item' },
-	        'About'
-	      ),
-	      _react2.default.createElement(
-	        'a',
-	        { href: '#home', className: 'menu-item' },
-	        'Home'
-	      )
+	      menuContent.map(function (item) {
+	        return _this.renderMenuItems(item.ref, item.name);
+	      })
 	    );
 	  },
 	  menu: function menu() {

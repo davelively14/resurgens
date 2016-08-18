@@ -1,5 +1,19 @@
 var initialState = {
-  sticky: false
+  sticky: false,
+  menuContent: [
+    {
+      ref: "portfolio",
+      name: "Portfolio"
+    },
+    {
+      ref: "about",
+      name: "About"
+    },
+    {
+      ref: "home",
+      name: "Home"
+    }
+  ]
 }
 
 const menu = (state = initialState, action) => {
