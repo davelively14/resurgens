@@ -23,9 +23,9 @@ const Menu = React.createClass({
   renderMenu(menuClass) {
     return (
       <div className={menuClass} ref="menu" id="menu">
-        <a href="#" className="menu-item">Portfolio</a>
-        <a href="#" className="menu-item">About</a>
-        <a href="#" className="menu-item">Home</a>
+        <a href="#portfolio" className="menu-item">Portfolio</a>
+        <a href="#about" className="menu-item">About</a>
+        <a href="#home" className="menu-item">Home</a>
       </div>
     )
   },

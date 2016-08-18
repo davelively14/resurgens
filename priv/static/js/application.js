@@ -23203,17 +23203,17 @@
 	      { className: menuClass, ref: 'menu', id: 'menu' },
 	      _react2.default.createElement(
 	        'a',
-	        { href: '#', className: 'menu-item' },
+	        { href: '#portfolio', className: 'menu-item' },
 	        'Portfolio'
 	      ),
 	      _react2.default.createElement(
 	        'a',
-	        { href: '#', className: 'menu-item' },
+	        { href: '#about', className: 'menu-item' },
 	        'About'
 	      ),
 	      _react2.default.createElement(
 	        'a',
-	        { href: '#', className: 'menu-item' },
+	        { href: '#home', className: 'menu-item' },
 	        'Home'
 	      )
 	    );

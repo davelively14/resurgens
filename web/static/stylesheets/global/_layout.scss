@@ -90,7 +90,11 @@ $block_height: 30vw;
 }
 
 .content-block {
-  width: 100%;
+  max-width: 75%;
+  margin: auto;
+  background-color: $alternate_bg;
+  position: relative;
+  @include font-fam-pri;
 }
 
 .container {
