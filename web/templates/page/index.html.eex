@@ -1,7 +1,7 @@
 <div class="top-bg-container">
   <div class="top-bg">
     <div class="title-skew">resurgens.io</div>
-    <div class="subtitle-skew">This subtext is temporary.</div>
+    <div class="subtitle-skew">This tagline is temporary.</div>
   </div>
 </div>
 
@@ -11,6 +11,11 @@
 <div class="main" id="main">
   <div class="intro-block">
     <span class="subtitle">This is a placeholder for all of this, but what happens if we have to wrap this text. And then we wrap it again? Does it all work?</span>
+  </div>
+  <div class="image-block-container">
+    <div class="image-block">
+
+    </div>
   </div>
   <!-- <div class="grid">
     <div class="grid__item grid__item--xs-span-1 bg_first">
