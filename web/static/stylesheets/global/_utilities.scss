@@ -7,6 +7,17 @@
 
 // - - - - - - - - - - - - - - - - - - -
 // - - mixins
+@mixin font-fam-pri() {
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+  color: $primary_text;
+}
+
+@mixin font-fam-title() {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: $primary_text;
+}
 
 // - - - - - - - - - - - - - - - - - - -
 // - - functions

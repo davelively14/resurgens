@@ -2,8 +2,9 @@
 // - - base
 // project defaults for base elements - h1-h6, p, a, etc.
 
-body {
+body, html {
   margin: 0;
+  @include font-fam-pri;
 }
 
 a {

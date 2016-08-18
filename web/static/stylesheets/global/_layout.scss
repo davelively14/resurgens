@@ -45,34 +45,25 @@
   box-sizing: border-box;
 }
 
-// Background areas
+// Header graphics areas
 .top-bg {
   background-color: $primary_bg;
   padding: 30px 0 40px 0px;
   padding: 2vw 0 3vw 0;
-  height: 300px;
+  height: 350px;
   width: 100vw;
   position: fixed;
-  z-index: -2;
 }
 
 .top-bg-container {
   position: relative;
-  height: 17vw;
+  height: 19vw;
   width: 100vw;
 }
 
 .main {
   position: relative;
-  z-index: -1;
-}
-
-.main {
   background-color: $alternate_bg;
-}
-
-.main-stick {
-  margin-top: 40px;
 }
 
 .container {
@@ -80,27 +71,25 @@
   margin: auto;
 }
 
+// Sticky menu properties
 $menu_height: 40px;
+
+.menu-container {
+  position: relative;
+  height: $menu_height;
+}
 
 .menu {
   position: relative;
   background-color: transparent;
-  z-index: 3;
+  z-index: 1;
   padding: 8px;
   height: $menu_height
-}
-
-.menu-container {
-  position: relative;
-  z-index: 2;
-  padding: 0;
-  height: $menu_height;
 }
 
 .menu-sticky {
   position: fixed;
   width: 100vw;
   top: 0;
-  margin-bottom: -40px;
   background-color: $primary_bg;
 }

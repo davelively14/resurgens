@@ -2,18 +2,6 @@
 // - - typography
 // global typography styles
 
-@mixin font-fam-pri() {
-  font-family: 'Roboto', sans-serif;
-  font-weight: lighter;
-  color: $primary_text;
-}
-
-@mixin font-fam-title() {
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
-  color: $primary_text;
-}
-
 .title-skew {
   transform: skewY(-4deg);
   text-align: center;
@@ -34,16 +22,5 @@
   font-size: 125%;
   float: right;
   padding: 0 10px;
-  background-color: orange;
-}
-
-.title-reg {
-  text-align: center;
-  @include font-fam-title;
-  color: white;
-  text-shadow: 2px 2px black;
-}
-
-body {
-  @include font-fam-pri;
+  background-color: $primary_bg;
 }

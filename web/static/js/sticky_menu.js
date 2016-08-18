@@ -1,3 +1,4 @@
+// TODO deprecate. Delete this all.
 let StickyMenu = {
 
   onReady() {
