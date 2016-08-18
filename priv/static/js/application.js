@@ -23228,7 +23228,7 @@
 	  render: function render() {
 	    return _react2.default.createElement(
 	      'div',
-	      { className: 'menu-container', id: 'menu_container' },
+	      { className: 'menu-wrapper', id: 'menu_container' },
 	      this.menu()
 	    );
 	  }

@@ -23,6 +23,11 @@
   @include font-fam-pri;
 }
 
+.intro-text {
+  font-size: 3vw;
+  @include font-fam-pri;
+}
+
 .menu-item {
   font-size: 125%;
   float: right;

@@ -40,7 +40,7 @@ const Menu = React.createClass({
 
   render() {
     return(
-      <div className="menu-container" id="menu_container">
+      <div className="menu-wrapper" id="menu_container">
         {this.menu()}
       </div>
     )

@@ -55,7 +55,7 @@
   position: fixed;
 }
 
-.top-bg-container {
+.top-bg-wrapper {
   position: relative;
   height: 25vw;
   width: 100vw;
@@ -67,7 +67,7 @@
   background-color: $alternate_bg;
 }
 
-$block_height: 85vh;
+$block_height: 40vw;
 
 .intro-block {
   width: 100%;
@@ -75,11 +75,11 @@ $block_height: 85vh;
   background-color: $alternate_bg;
   height: $block_height;
   position: relative;
-  padding: 0 1vw;
+  padding: 0 2vw;
   @include verticle-align-center;
 }
 
-.image-block-container {
+.image-block-wrapper {
   width: 100%;
   height: $block_height;
   position: relative;
@@ -95,7 +95,7 @@ $block_height: 85vh;
   transition: all 18s;
 }
 
-.image-block-container:hover .image-block {
+.image-block-wrapper:hover .image-block {
   transform: scale(1.2);
 }
 
@@ -111,7 +111,7 @@ $block_height: 85vh;
 // Sticky menu properties
 $menu_height: 40px;
 
-.menu-container {
+.menu-wrapper {
   position: relative;
   height: $menu_height;
 }
