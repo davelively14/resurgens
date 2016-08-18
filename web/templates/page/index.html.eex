@@ -9,7 +9,10 @@
 
 
 <div class="main" id="main">
-  <div class="grid">
+  <div class="intro-block">
+    <span class="subtitle">This is a placeholder for all of this, but what happens if we have to wrap this text. And then we wrap it again? Does it all work?</span>
+  </div>
+  <!-- <div class="grid">
     <div class="grid__item grid__item--xs-span-1 bg_first">
       xs span 1
     </div>
@@ -38,7 +41,7 @@
     <div class="grid__item grid__item--xs-span-3 bg_first">
       xs span 3
     </div>
-  </div>
+  </div> -->
   <div class="container">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest? Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo. Totum autem id externum est, et quod externum, id in casu est. Ut nemo dubitet, eorum omnia officia quo spectare, quid sequi, quid fugere debeant? Ille enim occurrentia nescio quae comminiscebatur; Duo Reges: constructio interrete. Ergo omni animali illud, quod appetiti positum est in eo, quod naturae est accommodatum. Non risu potius quam oratione eiciendum? Primum non saepe, deinde quae est ista relaxatio, cum et praeteriti doloris memoria recens est et futuri atque inpendentis torquet timor? Etsi qui potest intellegi aut cogitari esse aliquod animal, quod se oderit? Experiamur igitur, inquit, etsi habet haec Stoicorum ratio difficilius quiddam et obscurius. Te autem hortamur omnes, currentem quidem, ut spero, ut eos, quos novisse vis, imitari etiam velis. </p>
 

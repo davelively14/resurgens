@@ -21,6 +21,12 @@
   font-size: 7vw;
 }
 
+@mixin verticle-align-center() {
+  display: table;
+  display: table-cell;
+  vertical-align: middle;
+}
+
 // - - - - - - - - - - - - - - - - - - -
 // - - functions
 
