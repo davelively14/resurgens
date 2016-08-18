@@ -18,8 +18,14 @@ $grid_size: 12;
 // Background color
 $first_bg: cyan;
 $second_bg: yellow;
-$primary_bg: orange;
-$alternate_bg: white;
+$color_primary: #FFA500;
+$color_alt_1: #FFB339;
+$color_alt_2: #C68000;
+$color_alt_3: #9B6500;
+$color_alt_4: #000000;
+$bg_primary: $color_primary;
+$bg_white: white;
+
 
 // Text colors
 $primary_text: black;

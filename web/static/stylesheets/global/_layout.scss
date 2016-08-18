@@ -22,11 +22,11 @@
 }
 
 .bg_first {
-  background-color: $first_bg
+  background-color: $color_alt_2
 }
 
 .bg_second {
-  background-color: $second_bg
+  background-color: $color_alt_3
 }
 
 // Create all the grid elements
@@ -47,7 +47,7 @@
 
 // Header graphics areas
 .top-bg {
-  background-color: $primary_bg;
+  background-color: $bg_primary;
   padding: 30px 0 40px 0px;
   padding: 2vw 0 3vw 0;
   height: 100vh;
@@ -64,7 +64,7 @@
 // Main section
 .main {
   position: relative;
-  background-color: $alternate_bg;
+  background-color: $bg_white;
 }
 
 $block_height: 30vw;
@@ -73,7 +73,7 @@ $block_height: 30vw;
   width: 100%;
   height: $block_height;
   text-align: center;
-  background-color: $alternate_bg;
+  background-color: $bg_white;
   position: relative;
   padding: 0 2vw;
   @include verticle-align-center;
@@ -90,7 +90,7 @@ $block_height: 30vw;
 .content-block {
   max-width: 75%;
   margin: auto;
-  background-color: $alternate_bg;
+  background-color: $bg_white;
   position: relative;
   @include font-fam-pri;
 }
@@ -120,5 +120,5 @@ $menu_height: 40px;
   position: fixed;
   width: 100vw;
   top: 0;
-  background-color: $primary_bg;
+  background-color: $bg_primary;
 }
