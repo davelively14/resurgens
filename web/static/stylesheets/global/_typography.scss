@@ -4,18 +4,24 @@
 
 .title-skew {
   transform: skewY(-4deg);
-  text-align: center;
-  font-size: 300%;
-  font-size: 7vw;
   @include font-fam-title;
 };
+
+.title {
+  @include font-fam-title;
+}
 
 .subtitle-skew {
   transform: skewY(-4deg);
   text-align: center;
-  font-size: 200%;
   font-size: 5vw;
   @include font-fam-pri;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 5vw;
+  @@include font-fam-pri;
 }
 
 .menu-item {
