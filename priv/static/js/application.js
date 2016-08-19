@@ -23432,7 +23432,7 @@
 	      null,
 	      _react2.default.createElement(
 	        "div",
-	        { className: "image-block-1", id: "about" },
+	        { className: "image-block-about", id: "about" },
 	        _react2.default.createElement(
 	          "span",
 	          { className: "image-text" },

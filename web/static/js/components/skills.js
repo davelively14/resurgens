@@ -4,7 +4,7 @@ const Skills = React.createClass({
   render() {
     return (
       <div>
-        <div className="image-block-3" id="skills">
+        <div className="image-block-skills" id="skills">
           <span className="image-text">My Mad Skills</span>
         </div>
         <div className="content-block">

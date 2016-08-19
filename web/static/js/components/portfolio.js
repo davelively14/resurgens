@@ -4,7 +4,7 @@ const Portfolio = React.createClass({
   render() {
     return (
       <div>
-        <div className="image-block-2" id="portfolio">
+        <div className="image-block-portfolio" id="portfolio">
           <span className="image-text">My Portfolio</span>
         </div>
         <div className="content-block">

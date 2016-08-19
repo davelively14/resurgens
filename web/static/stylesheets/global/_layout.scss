@@ -71,15 +71,15 @@ $block_height: 30vw;
   @include verticle-align-center;
 }
 
-.image-block-1 {
+.image-block-about {
   @include image-block("http://wallpapercave.com/wp/Sd3rbbg.jpg");
 }
 
-.image-block-2 {
+.image-block-portfolio {
   @include image-block("https://littlepebble.files.wordpress.com/2011/02/milledge-fountain-not-mine.jpg");
 }
 
-.image-block-3 {
+.image-block-skills {
   @include image-block("https://i.ytimg.com/vi/dlRsqt33mik/maxresdefault.jpg");
 }
 
