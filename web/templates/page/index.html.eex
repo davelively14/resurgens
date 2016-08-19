@@ -1,9 +1,9 @@
-<div class="top-bg-wrapper" id="home">
+<!-- <div class="top-bg-wrapper" id="home">
   <div class="top-bg">
     <div class="title-skew">resurgens.io</div>
     <div class="subtitle-skew">This tagline is temporary.</div>
   </div>
-</div>
+</div> -->
 
 <main id="react" role="main"></main>
 

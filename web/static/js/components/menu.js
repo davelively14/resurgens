@@ -21,7 +21,6 @@ const Menu = React.createClass({
   },
 
   renderMenuItems(ref, name) {
-    console.log(ref + ", ", name);
     return (
       <a href={"#" + ref} className="menu-item" key={ref}>{name}</a>
     )
