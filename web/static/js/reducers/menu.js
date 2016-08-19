@@ -2,6 +2,10 @@ var initialState = {
   sticky: false,
   menuContent: [
     {
+      ref: "skills",
+      name: "Skills"
+    },
+    {
       ref: "portfolio",
       name: "Portfolio"
     },

@@ -79,6 +79,10 @@ $block_height: 30vw;
   @include image-block("https://littlepebble.files.wordpress.com/2011/02/milledge-fountain-not-mine.jpg");
 }
 
+.image-block-3 {
+  @include image-block("https://i.ytimg.com/vi/dlRsqt33mik/maxresdefault.jpg");
+}
+
 .content-block {
   max-width: 75%;
   padding: 1vw 0;

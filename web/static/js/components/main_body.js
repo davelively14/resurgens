@@ -1,6 +1,7 @@
 import React from 'react'
 import About from './about'
 import Portfolio from './portfolio'
+import Skills from './skills'
 
 const MainBody = React.createClass({
   render() {
@@ -11,9 +12,7 @@ const MainBody = React.createClass({
         </div>
         <About />
         <Portfolio />
-        <div className="intro-block">
-          <span className="intro-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest? Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo.</span>
-        </div>
+        <Skills />
       </div>
     )
   }
