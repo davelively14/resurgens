@@ -63,7 +63,7 @@
 $block_height: 30vw;
 
 .intro-block {
-  width: 100%;
+  width: 100vw;
   height: $block_height;
   background-color: $bg_white;
   position: relative;
@@ -81,6 +81,7 @@ $block_height: 30vw;
 
 .content-block {
   max-width: 75%;
+  padding: 1vw 0 0 0;
   margin: auto;
   background-color: $bg_white;
   position: relative;
