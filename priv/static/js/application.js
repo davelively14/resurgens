@@ -23159,6 +23159,10 @@
 
 	var _main_body2 = _interopRequireDefault(_main_body);
 
+	var _footer = __webpack_require__(211);
+
+	var _footer2 = _interopRequireDefault(_footer);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var App = function App() {
@@ -23167,7 +23171,8 @@
 	    null,
 	    _react2.default.createElement(_bg_header2.default, null),
 	    _react2.default.createElement(_menu_container2.default, null),
-	    _react2.default.createElement(_main_body2.default, null)
+	    _react2.default.createElement(_main_body2.default, null),
+	    _react2.default.createElement(_footer2.default, null)
 	  );
 	};
 
@@ -23523,6 +23528,39 @@
 	});
 
 	exports.default = MainBody;
+
+/***/ },
+/* 211 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(6);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Footer = _react2.default.createClass({
+	  displayName: "Footer",
+	  render: function render() {
+	    return _react2.default.createElement(
+	      "div",
+	      { className: "footer-block", id: "footer" },
+	      _react2.default.createElement(
+	        "span",
+	        { className: "footer-text" },
+	        "Temporary holding text"
+	      )
+	    );
+	  }
+	});
+
+	exports.default = Footer;
 
 /***/ }
 /******/ ]);

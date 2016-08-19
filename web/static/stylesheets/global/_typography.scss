@@ -35,6 +35,12 @@
   text-shadow: 0.1vw 0.1vw black;
 }
 
+.footer-text {
+  @include font-fam-pri;
+  font-size: 4vh;
+  color: $alternate_text;
+}
+
 .menu-item {
   font-size: 125%;
   float: right;

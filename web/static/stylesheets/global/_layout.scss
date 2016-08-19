@@ -21,14 +21,6 @@
   flex-flow: row wrap;
 }
 
-.bg_first {
-  background-color: $color_alt_2
-}
-
-.bg_second {
-  background-color: $color_alt_3
-}
-
 // Create all the grid elements
 @each $key, $value in $breakpoints {
   @for $i from 1 through $grid_size {
@@ -50,12 +42,13 @@
   background-color: $bg_primary;
   padding: 30px 0 40px 0px;
   padding: 2vw 0 3vw 0;
-  height: 100vh;
+  height: 30vw;
   width: 100vw;
   position: fixed;
 }
 
 .top-bg-wrapper {
+  background-color: $bg_primary;
   position: relative;
   height: 25vw;
   width: 100vw;
@@ -72,7 +65,6 @@ $block_height: 30vw;
 .intro-block {
   width: 100%;
   height: $block_height;
-  text-align: center;
   background-color: $bg_white;
   position: relative;
   padding: 0 2vw;
@@ -121,4 +113,14 @@ $menu_height: 40px;
   width: 100vw;
   top: 0;
   background-color: $bg_primary;
+}
+
+// Footer properties
+.footer-block {
+  width: 100vw;
+  height: 100px;
+  position: relative;
+  padding: 0 2vh;
+  background-color: $color_alt_3;
+  @include verticle-align-center;
 }
