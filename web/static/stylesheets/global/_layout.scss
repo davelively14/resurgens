@@ -81,7 +81,7 @@ $block_height: 30vw;
 
 .content-block {
   max-width: 75%;
-  padding: 1vw 0 0 0;
+  padding: 1vw 0;
   margin: auto;
   background-color: $bg_white;
   position: relative;
@@ -121,7 +121,7 @@ $menu_height: 40px;
   width: 100vw;
   height: 100px;
   position: relative;
-  padding: 0 2vh;
+  padding: 0 10vh;
   background-color: $color_alt_3;
   @include verticle-align-center;
 }
