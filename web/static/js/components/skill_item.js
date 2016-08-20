@@ -4,7 +4,7 @@ const SkillItem = React.createClass({
   render() {
     return (
       <span>
-        <a href={this.props.link}>
+        <a href={this.props.link} target="_blank">
           <img src={this.props.imageSrc} alt={this.props.text + " icon"} className="skill-icon zoom"/>
         </a>
         <br />

@@ -23667,7 +23667,7 @@
 	      null,
 	      _react2.default.createElement(
 	        "a",
-	        { href: this.props.link },
+	        { href: this.props.link, target: "_blank" },
 	        _react2.default.createElement("img", { src: this.props.imageSrc, alt: this.props.text + " icon", className: "skill-icon zoom" })
 	      ),
 	      _react2.default.createElement("br", null),
