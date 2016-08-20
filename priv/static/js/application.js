@@ -23631,11 +23631,15 @@
 	        _react2.default.createElement(_skill_item2.default, {
 	          imageSrc: '/images/icons/icon_elixir.png',
 	          link: 'http://elixir-lang.org/',
-	          text: 'Elixir' }),
+	          text: 'Elixir / Phoenix' }),
 	        _react2.default.createElement(_skill_item2.default, {
 	          imageSrc: '/images/icons/icon_react.png',
 	          link: 'https://facebook.github.io/react/',
-	          text: 'React' })
+	          text: 'React / Redux' }),
+	        _react2.default.createElement(_skill_item2.default, {
+	          imageSrc: '/images/icons/icon_rails.png',
+	          link: 'http://rubyonrails.org/',
+	          text: 'Ruby on Rails' })
 	      )
 	    );
 	  }
