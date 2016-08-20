@@ -22,7 +22,6 @@
 }
 
 @mixin verticle-align-center() {
-  display: table;
   display: table-cell;
   vertical-align: middle;
   text-align: center;
@@ -31,7 +30,6 @@
 @mixin image-block($url) {
   width: 100vw;
   height: $block_height;
-  position: relative;
   overflow: hidden;
   background-image: url($url);
   background-size: cover;
