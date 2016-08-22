@@ -23639,7 +23639,23 @@
 	        _react2.default.createElement(_skill_item2.default, {
 	          imageSrc: '/images/icons/icon_rails.png',
 	          link: 'http://rubyonrails.org/',
-	          text: 'Ruby on Rails' })
+	          text: 'Ruby on Rails' }),
+	        _react2.default.createElement(_skill_item2.default, {
+	          imageSrc: '/images/icons/icon_css3.png',
+	          link: '',
+	          text: 'CSS' }),
+	        _react2.default.createElement(_skill_item2.default, {
+	          imageSrc: '/images/icons/icon_html.png',
+	          link: '',
+	          text: 'HTML' }),
+	        _react2.default.createElement(_skill_item2.default, {
+	          imageSrc: '/images/icons/icon_php.png',
+	          link: 'http://php.net/',
+	          text: 'PHP' }),
+	        _react2.default.createElement(_skill_item2.default, {
+	          imageSrc: '/images/icons/icon_js.png',
+	          link: 'https://www.javascript.com/',
+	          text: 'JavaScript' })
 	      )
 	    );
 	  }

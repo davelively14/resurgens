@@ -21,6 +21,22 @@ const Skills = React.createClass({
             imageSrc="/images/icons/icon_rails.png"
             link="http://rubyonrails.org/"
             text="Ruby on Rails" />
+          <SkillItem
+            imageSrc="/images/icons/icon_css3.png"
+            link=""
+            text="CSS" />
+          <SkillItem
+            imageSrc="/images/icons/icon_html.png"
+            link=""
+            text="HTML" />
+          <SkillItem
+            imageSrc="/images/icons/icon_php.png"
+            link="http://php.net/"
+            text="PHP" />
+          <SkillItem
+            imageSrc="/images/icons/icon_js.png"
+            link="https://www.javascript.com/"
+            text="JavaScript" />
         </div>
       </div>
     )
