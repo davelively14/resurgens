@@ -23103,11 +23103,11 @@
 	    ref: "skills",
 	    name: "Skills"
 	  }, {
-	    ref: "portfolio",
-	    name: "Portfolio"
-	  }, {
 	    ref: "about",
 	    name: "About"
+	  }, {
+	    ref: "portfolio",
+	    name: "Portfolio"
 	  }, {
 	    ref: "home",
 	    name: "Home"
@@ -23399,8 +23399,8 @@
 	          'This is a placeholder for all of this, but what happens if we have to wrap this text. And then we wrap it again? Does it all work?'
 	        )
 	      ),
-	      _react2.default.createElement(_about2.default, null),
 	      _react2.default.createElement(_portfolio2.default, null),
+	      _react2.default.createElement(_about2.default, null),
 	      _react2.default.createElement(_skills2.default, null)
 	    );
 	  }

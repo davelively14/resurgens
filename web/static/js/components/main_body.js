@@ -10,8 +10,8 @@ const MainBody = React.createClass({
         <div className="intro-block">
           <span className="intro-text">This is a placeholder for all of this, but what happens if we have to wrap this text. And then we wrap it again? Does it all work?</span>
         </div>
-        <About />
         <Portfolio />
+        <About />
         <Skills />
       </div>
     )

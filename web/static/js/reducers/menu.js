@@ -6,12 +6,12 @@ var initialState = {
       name: "Skills"
     },
     {
-      ref: "portfolio",
-      name: "Portfolio"
-    },
-    {
       ref: "about",
       name: "About"
+    },
+    {
+      ref: "portfolio",
+      name: "Portfolio"
     },
     {
       ref: "home",
