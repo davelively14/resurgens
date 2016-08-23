@@ -77,7 +77,7 @@
 
 	var _index2 = _interopRequireDefault(_index);
 
-	var _app = __webpack_require__(205);
+	var _app = __webpack_require__(206);
 
 	var _app2 = _interopRequireDefault(_app);
 
@@ -23080,10 +23080,15 @@
 
 	var _menu2 = _interopRequireDefault(_menu);
 
+	var _photo_frames = __webpack_require__(205);
+
+	var _photo_frames2 = _interopRequireDefault(_photo_frames);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var resurgensApp = (0, _redux.combineReducers)({
-	  menu: _menu2.default
+	  menu: _menu2.default,
+	  photoFrames: _photo_frames2.default
 	});
 
 	exports.default = resurgensApp;
@@ -23138,6 +23143,88 @@
 
 /***/ },
 /* 205 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+	var initialState = [{
+	  id: 1,
+	  visible: false
+	}, {
+	  id: 2,
+	  visible: false
+	}, {
+	  id: 3,
+	  visible: false
+	}];
+
+	var processFrame = function processFrame() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+	  var action = arguments[1];
+
+	  switch (action.type) {
+	    case 'ADD_FRAME':
+	      return Object.assign({}, state, {
+	        id: action.id,
+	        visible: false
+	      });
+
+	    case 'SHOW_FRAME':
+	      if (state.id !== action.id) {
+	        return state;
+	      }
+
+	      return Object.assign({}, state, {
+	        visible: true
+	      });
+
+	    case 'HIDE_FRAME':
+	      if (state.id !== action.id) {
+	        return state;
+	      }
+
+	      return Object.assign({}, state, {
+	        visible: false
+	      });
+
+	    default:
+	      return state;
+	  }
+	};
+
+	var photoFrames = function photoFrames() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? initialState : arguments[0];
+	  var action = arguments[1];
+
+	  switch (action.type) {
+	    case 'ADD_FRAME':
+	      return [].concat(_toConsumableArray(state), [processFrame(undefined, action)]);
+
+	    case 'SHOW_FRAME':
+	      return state.map(function (frame) {
+	        return processFrame(frame, action);
+	      });
+
+	    case 'HIDE_FRAME':
+	      return state.map(function (frame) {
+	        return processFrame(frame, action);
+	      });
+
+	    default:
+	      return state;
+	  }
+	};
+
+	exports.default = photoFrames;
+
+/***/ },
+/* 206 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23150,19 +23237,19 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _menu_container = __webpack_require__(206);
+	var _menu_container = __webpack_require__(207);
 
 	var _menu_container2 = _interopRequireDefault(_menu_container);
 
-	var _bg_header = __webpack_require__(209);
+	var _bg_header = __webpack_require__(210);
 
 	var _bg_header2 = _interopRequireDefault(_bg_header);
 
-	var _main_body = __webpack_require__(210);
+	var _main_body = __webpack_require__(211);
 
 	var _main_body2 = _interopRequireDefault(_main_body);
 
-	var _footer = __webpack_require__(215);
+	var _footer = __webpack_require__(217);
 
 	var _footer2 = _interopRequireDefault(_footer);
 
@@ -23182,7 +23269,7 @@
 	exports.default = App;
 
 /***/ },
-/* 206 */
+/* 207 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23193,11 +23280,11 @@
 
 	var _reactRedux = __webpack_require__(180);
 
-	var _menu = __webpack_require__(207);
+	var _menu = __webpack_require__(208);
 
 	var _menu2 = _interopRequireDefault(_menu);
 
-	var _index = __webpack_require__(208);
+	var _index = __webpack_require__(209);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23224,7 +23311,7 @@
 	exports.default = MenuContainer;
 
 /***/ },
-/* 207 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23294,7 +23381,7 @@
 	exports.default = Menu;
 
 /***/ },
-/* 208 */
+/* 209 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23314,8 +23401,22 @@
 	  };
 	};
 
+	var showFrame = exports.showFrame = function showFrame(id) {
+	  return {
+	    type: 'SHOW_FRAME',
+	    id: id
+	  };
+	};
+
+	var hideFrame = exports.hideFrame = function hideFrame(id) {
+	  return {
+	    type: 'HIDE_FRAME',
+	    id: id
+	  };
+	};
+
 /***/ },
-/* 209 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -23357,7 +23458,7 @@
 	exports.default = BgHeader;
 
 /***/ },
-/* 210 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23370,15 +23471,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _about = __webpack_require__(211);
+	var _about = __webpack_require__(212);
 
 	var _about2 = _interopRequireDefault(_about);
 
-	var _portfolio = __webpack_require__(212);
+	var _portfolio = __webpack_require__(214);
 
 	var _portfolio2 = _interopRequireDefault(_portfolio);
 
-	var _skills = __webpack_require__(213);
+	var _skills = __webpack_require__(215);
 
 	var _skills2 = _interopRequireDefault(_skills);
 
@@ -23409,10 +23510,115 @@
 	exports.default = MainBody;
 
 /***/ },
-/* 211 */
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(6);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _photo_frame = __webpack_require__(213);
+
+	var _photo_frame2 = _interopRequireDefault(_photo_frame);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var About = _react2.default.createClass({
+	  displayName: 'About',
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'image-block-about', id: 'about', ref: 'about' },
+	        _react2.default.createElement(
+	          'span',
+	          { className: 'image-text' },
+	          'About Me'
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'grid' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'grid__item--sm-span-4' },
+	          _react2.default.createElement(_photo_frame2.default, {
+	            prevElem: 'about' })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'grid__item--sm-span-8 content-block' },
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest? Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo. Totum autem id externum est, et quod externum, id in casu est. Ut nemo dubitet, eorum omnia officia quo spectare, quid sequi, quid fugere debeant? Ille enim occurrentia nescio quae comminiscebatur; Duo Reges: constructio interrete. Ergo omni animali illud, quod appetiti positum est in eo, quod naturae est accommodatum. Non risu potius quam oratione eiciendum? Primum non saepe, deinde quae est ista relaxatio, cum et praeteriti doloris memoria recens est et futuri atque inpendentis torquet timor? Etsi qui potest intellegi aut cogitari esse aliquod animal, quod se oderit? Experiamur igitur, inquit, etsi habet haec Stoicorum ratio difficilius quiddam et obscurius. Te autem hortamur omnes, currentem quidem, ut spero, ut eos, quos novisse vis, imitari etiam velis. '
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'Atque ab isto capite fluere necesse est omnem rationem bonorum et malorum. Atque omnia quidem scire, cuiuscumque modi sint, cupere curiosorum, duci vero maiorum rerum contemplatione ad cupiditatem scientiae summorum virorum est putandum. Negat enim summo bono afferre incrementum diem. Tubulum fuisse, qua illum, cuius is condemnatus est rogatione, P. Ad eos igitur converte te, quaeso. Sin est etiam corpus, ista explanatio naturae nempe hoc effecerit, ut ea, quae ante explanationem tenebamus, relinquamus. Estne, quaeso, inquam, sitienti in bibendo voluptas? Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? An vero displicuit ea, quae tributa est animi virtutibus tanta praestantia? Esto, fecerit, si ita vis, Torquatus propter suas utilitatesmalo enim dicere quam voluptates, in tanto praesertim viro-, num etiam eius collega P. '
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'Effluit igitur voluptas corporis et prima quaeque avolat saepiusque relinquit causam paenitendi quam recordandi. Quid turpius quam sapientis vitam ex insipientium sermone pendere? Nec vero intermittunt aut admirationem earum rerum, quae sunt ab antiquis repertae, aut investigationem novarum. Videamus animi partes, quarum est conspectus illustrior; Iam quae corporis sunt, ea nec auctoritatem cum animi partibus, comparandam et cognitionem habent faciliorem. '
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'Quo studio cum satiari non possint, omnium ceterarum rerum obliti níhil abiectum, nihil humile cogitant; Idne consensisse de Calatino plurimas gentis arbitramur, primarium populi fuisse, quod praestantissimus fuisset in conficiendis voluptatibus? Sic igitur in homine perfectio ista in eo potissimum, quod est optimum, id est in virtute, laudatur. An tu me de L. Sed id ne cogitari quidem potest quale sit, ut non repugnet ipsum sibi. Suo enim quisque studio maxime ducitur. '
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'Nam his libris eum malo quam reliquo ornatu villae delectari. Ait enim se, si uratur, Quam hoc suave! dicturum. Qui enim voluptatem ipsam contemnunt, iis licet dicere se acupenserem maenae non anteponere. Nondum autem explanatum satis, erat, quid maxime natura vellet. Modo etiam paulum ad dexteram de via declinavi, ut ad Pericli sepulcrum accederem. '
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest? Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo. Totum autem id externum est, et quod externum, id in casu est. Ut nemo dubitet, eorum omnia officia quo spectare, quid sequi, quid fugere debeant? Ille enim occurrentia nescio quae comminiscebatur; Duo Reges: constructio interrete. Ergo omni animali illud, quod appetiti positum est in eo, quod naturae est accommodatum. Non risu potius quam oratione eiciendum? Primum non saepe, deinde quae est ista relaxatio, cum et praeteriti doloris memoria recens est et futuri atque inpendentis torquet timor? Etsi qui potest intellegi aut cogitari esse aliquod animal, quod se oderit? Experiamur igitur, inquit, etsi habet haec Stoicorum ratio difficilius quiddam et obscurius. Te autem hortamur omnes, currentem quidem, ut spero, ut eos, quos novisse vis, imitari etiam velis. '
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'Atque ab isto capite fluere necesse est omnem rationem bonorum et malorum. Atque omnia quidem scire, cuiuscumque modi sint, cupere curiosorum, duci vero maiorum rerum contemplatione ad cupiditatem scientiae summorum virorum est putandum. Negat enim summo bono afferre incrementum diem. Tubulum fuisse, qua illum, cuius is condemnatus est rogatione, P. Ad eos igitur converte te, quaeso. Sin est etiam corpus, ista explanatio naturae nempe hoc effecerit, ut ea, quae ante explanationem tenebamus, relinquamus. Estne, quaeso, inquam, sitienti in bibendo voluptas? Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? An vero displicuit ea, quae tributa est animi virtutibus tanta praestantia? Esto, fecerit, si ita vis, Torquatus propter suas utilitatesmalo enim dicere quam voluptates, in tanto praesertim viro-, num etiam eius collega P. '
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'Effluit igitur voluptas corporis et prima quaeque avolat saepiusque relinquit causam paenitendi quam recordandi. Quid turpius quam sapientis vitam ex insipientium sermone pendere? Nec vero intermittunt aut admirationem earum rerum, quae sunt ab antiquis repertae, aut investigationem novarum. Videamus animi partes, quarum est conspectus illustrior; Iam quae corporis sunt, ea nec auctoritatem cum animi partibus, comparandam et cognitionem habent faciliorem. '
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'Quo studio cum satiari non possint, omnium ceterarum rerum obliti níhil abiectum, nihil humile cogitant; Idne consensisse de Calatino plurimas gentis arbitramur, primarium populi fuisse, quod praestantissimus fuisset in conficiendis voluptatibus? Sic igitur in homine perfectio ista in eo potissimum, quod est optimum, id est in virtute, laudatur. An tu me de L. Sed id ne cogitari quidem potest quale sit, ut non repugnet ipsum sibi. Suo enim quisque studio maxime ducitur. '
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'Nam his libris eum malo quam reliquo ornatu villae delectari. Ait enim se, si uratur, Quam hoc suave! dicturum. Qui enim voluptatem ipsam contemnunt, iis licet dicere se acupenserem maenae non anteponere. Nondum autem explanatum satis, erat, quid maxime natura vellet. Modo etiam paulum ad dexteram de via declinavi, ut ad Pericli sepulcrum accederem. '
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	exports.default = About;
+
+/***/ },
+/* 213 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -23424,83 +23630,33 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var About = _react2.default.createClass({
-	  displayName: "About",
+	var PhotoFrame = _react2.default.createClass({
+	  displayName: 'PhotoFrame',
+	  componentDidMount: function componentDidMount() {
+	    document.addEventListener('scroll', this.handleScroll);
+	  },
+	  componentWillUnmount: function componentWillUnmount() {
+	    document.removeEventListener('scroll', this.handleScroll);
+	  },
+	  handleScroll: function handleScroll() {
+	    var top = document.getElementById(this.props.prevElem).getBoundingClientRect().bottom;
+	    console.log(top);
+	    // When <= 0, photo frame appears, transition fade in
+	    // when > 0 or <= bottom of content block diappears (NEED TO PASS ID OF THAT ELEMENT)
+	  },
 	  render: function render() {
 	    return _react2.default.createElement(
-	      "div",
+	      'div',
 	      null,
-	      _react2.default.createElement(
-	        "div",
-	        { className: "image-block-about", id: "about" },
-	        _react2.default.createElement(
-	          "span",
-	          { className: "image-text" },
-	          "About Me"
-	        )
-	      ),
-	      _react2.default.createElement(
-	        "div",
-	        { className: "content-block" },
-	        _react2.default.createElement(
-	          "p",
-	          null,
-	          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest? Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo. Totum autem id externum est, et quod externum, id in casu est. Ut nemo dubitet, eorum omnia officia quo spectare, quid sequi, quid fugere debeant? Ille enim occurrentia nescio quae comminiscebatur; Duo Reges: constructio interrete. Ergo omni animali illud, quod appetiti positum est in eo, quod naturae est accommodatum. Non risu potius quam oratione eiciendum? Primum non saepe, deinde quae est ista relaxatio, cum et praeteriti doloris memoria recens est et futuri atque inpendentis torquet timor? Etsi qui potest intellegi aut cogitari esse aliquod animal, quod se oderit? Experiamur igitur, inquit, etsi habet haec Stoicorum ratio difficilius quiddam et obscurius. Te autem hortamur omnes, currentem quidem, ut spero, ut eos, quos novisse vis, imitari etiam velis. "
-	        ),
-	        _react2.default.createElement(
-	          "p",
-	          null,
-	          "Atque ab isto capite fluere necesse est omnem rationem bonorum et malorum. Atque omnia quidem scire, cuiuscumque modi sint, cupere curiosorum, duci vero maiorum rerum contemplatione ad cupiditatem scientiae summorum virorum est putandum. Negat enim summo bono afferre incrementum diem. Tubulum fuisse, qua illum, cuius is condemnatus est rogatione, P. Ad eos igitur converte te, quaeso. Sin est etiam corpus, ista explanatio naturae nempe hoc effecerit, ut ea, quae ante explanationem tenebamus, relinquamus. Estne, quaeso, inquam, sitienti in bibendo voluptas? Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? An vero displicuit ea, quae tributa est animi virtutibus tanta praestantia? Esto, fecerit, si ita vis, Torquatus propter suas utilitatesmalo enim dicere quam voluptates, in tanto praesertim viro-, num etiam eius collega P. "
-	        ),
-	        _react2.default.createElement(
-	          "p",
-	          null,
-	          "Effluit igitur voluptas corporis et prima quaeque avolat saepiusque relinquit causam paenitendi quam recordandi. Quid turpius quam sapientis vitam ex insipientium sermone pendere? Nec vero intermittunt aut admirationem earum rerum, quae sunt ab antiquis repertae, aut investigationem novarum. Videamus animi partes, quarum est conspectus illustrior; Iam quae corporis sunt, ea nec auctoritatem cum animi partibus, comparandam et cognitionem habent faciliorem. "
-	        ),
-	        _react2.default.createElement(
-	          "p",
-	          null,
-	          "Quo studio cum satiari non possint, omnium ceterarum rerum obliti níhil abiectum, nihil humile cogitant; Idne consensisse de Calatino plurimas gentis arbitramur, primarium populi fuisse, quod praestantissimus fuisset in conficiendis voluptatibus? Sic igitur in homine perfectio ista in eo potissimum, quod est optimum, id est in virtute, laudatur. An tu me de L. Sed id ne cogitari quidem potest quale sit, ut non repugnet ipsum sibi. Suo enim quisque studio maxime ducitur. "
-	        ),
-	        _react2.default.createElement(
-	          "p",
-	          null,
-	          "Nam his libris eum malo quam reliquo ornatu villae delectari. Ait enim se, si uratur, Quam hoc suave! dicturum. Qui enim voluptatem ipsam contemnunt, iis licet dicere se acupenserem maenae non anteponere. Nondum autem explanatum satis, erat, quid maxime natura vellet. Modo etiam paulum ad dexteram de via declinavi, ut ad Pericli sepulcrum accederem. "
-	        ),
-	        _react2.default.createElement(
-	          "p",
-	          null,
-	          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest? Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo. Totum autem id externum est, et quod externum, id in casu est. Ut nemo dubitet, eorum omnia officia quo spectare, quid sequi, quid fugere debeant? Ille enim occurrentia nescio quae comminiscebatur; Duo Reges: constructio interrete. Ergo omni animali illud, quod appetiti positum est in eo, quod naturae est accommodatum. Non risu potius quam oratione eiciendum? Primum non saepe, deinde quae est ista relaxatio, cum et praeteriti doloris memoria recens est et futuri atque inpendentis torquet timor? Etsi qui potest intellegi aut cogitari esse aliquod animal, quod se oderit? Experiamur igitur, inquit, etsi habet haec Stoicorum ratio difficilius quiddam et obscurius. Te autem hortamur omnes, currentem quidem, ut spero, ut eos, quos novisse vis, imitari etiam velis. "
-	        ),
-	        _react2.default.createElement(
-	          "p",
-	          null,
-	          "Atque ab isto capite fluere necesse est omnem rationem bonorum et malorum. Atque omnia quidem scire, cuiuscumque modi sint, cupere curiosorum, duci vero maiorum rerum contemplatione ad cupiditatem scientiae summorum virorum est putandum. Negat enim summo bono afferre incrementum diem. Tubulum fuisse, qua illum, cuius is condemnatus est rogatione, P. Ad eos igitur converte te, quaeso. Sin est etiam corpus, ista explanatio naturae nempe hoc effecerit, ut ea, quae ante explanationem tenebamus, relinquamus. Estne, quaeso, inquam, sitienti in bibendo voluptas? Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? An vero displicuit ea, quae tributa est animi virtutibus tanta praestantia? Esto, fecerit, si ita vis, Torquatus propter suas utilitatesmalo enim dicere quam voluptates, in tanto praesertim viro-, num etiam eius collega P. "
-	        ),
-	        _react2.default.createElement(
-	          "p",
-	          null,
-	          "Effluit igitur voluptas corporis et prima quaeque avolat saepiusque relinquit causam paenitendi quam recordandi. Quid turpius quam sapientis vitam ex insipientium sermone pendere? Nec vero intermittunt aut admirationem earum rerum, quae sunt ab antiquis repertae, aut investigationem novarum. Videamus animi partes, quarum est conspectus illustrior; Iam quae corporis sunt, ea nec auctoritatem cum animi partibus, comparandam et cognitionem habent faciliorem. "
-	        ),
-	        _react2.default.createElement(
-	          "p",
-	          null,
-	          "Quo studio cum satiari non possint, omnium ceterarum rerum obliti níhil abiectum, nihil humile cogitant; Idne consensisse de Calatino plurimas gentis arbitramur, primarium populi fuisse, quod praestantissimus fuisset in conficiendis voluptatibus? Sic igitur in homine perfectio ista in eo potissimum, quod est optimum, id est in virtute, laudatur. An tu me de L. Sed id ne cogitari quidem potest quale sit, ut non repugnet ipsum sibi. Suo enim quisque studio maxime ducitur. "
-	        ),
-	        _react2.default.createElement(
-	          "p",
-	          null,
-	          "Nam his libris eum malo quam reliquo ornatu villae delectari. Ait enim se, si uratur, Quam hoc suave! dicturum. Qui enim voluptatem ipsam contemnunt, iis licet dicere se acupenserem maenae non anteponere. Nondum autem explanatum satis, erat, quid maxime natura vellet. Modo etiam paulum ad dexteram de via declinavi, ut ad Pericli sepulcrum accederem. "
-	        )
-	      )
+	      'Just a little test'
 	    );
 	  }
 	});
 
-	exports.default = About;
+	exports.default = PhotoFrame;
 
 /***/ },
-/* 212 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -23591,7 +23747,7 @@
 	exports.default = Portfolio;
 
 /***/ },
-/* 213 */
+/* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23604,7 +23760,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _skill_item = __webpack_require__(214);
+	var _skill_item = __webpack_require__(216);
 
 	var _skill_item2 = _interopRequireDefault(_skill_item);
 
@@ -23664,7 +23820,7 @@
 	exports.default = Skills;
 
 /***/ },
-/* 214 */
+/* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -23708,7 +23864,7 @@
 	exports.default = SkillItem;
 
 /***/ },
-/* 215 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";

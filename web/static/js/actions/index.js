@@ -9,3 +9,17 @@ export const makeUnsticky = () => {
     type: 'MAKE_UNSTICKY'
   }
 }
+
+export const showFrame = (id) => {
+  return {
+    type: 'SHOW_FRAME',
+    id
+  }
+}
+
+export const hideFrame = (id) => {
+  return {
+    type: 'HIDE_FRAME',
+    id
+  }
+}

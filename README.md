@@ -1,9 +1,9 @@
 # Resurgens
 
-My website.
+My website with portfolio.
 
 Current release version: n/a
-Current version on [github](http:)
+Current version on [github](https://github.com/davelively14/resurgens): 0.1c
 
 ## Todo
 
@@ -18,7 +18,11 @@ Current version on [github](http:)
     - Recruiting
     - Programming
 - Portfolio
-  - Add sections
+  - Show projects, but use SkillItems next to the project to indicate tech used
+  - Projects listed one by one
+    - Link to source code (use github icon)
+    - Link to slideshow of functioning site? Or deploy actual site to a subdirectory?
+- Remove skills section, but include SkillItems in portfolio
 
 ## Changelog
 
