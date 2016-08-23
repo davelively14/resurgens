@@ -23523,9 +23523,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _photo_frame = __webpack_require__(213);
+	var _photo_frame_container = __webpack_require__(213);
 
-	var _photo_frame2 = _interopRequireDefault(_photo_frame);
+	var _photo_frame_container2 = _interopRequireDefault(_photo_frame_container);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23546,12 +23546,14 @@
 	      ),
 	      _react2.default.createElement(
 	        'div',
-	        { className: 'grid' },
+	        { className: 'grid', id: 'section-1' },
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'grid__item--sm-span-4' },
-	          _react2.default.createElement(_photo_frame2.default, {
-	            prevElem: 'about' })
+	          _react2.default.createElement(_photo_frame_container2.default, {
+	            id: '1',
+	            showAfter: 'about',
+	            hideBefore: 'section-2' })
 	        ),
 	        _react2.default.createElement(
 	          'div',
@@ -23607,6 +23609,11 @@
 	            'Nam his libris eum malo quam reliquo ornatu villae delectari. Ait enim se, si uratur, Quam hoc suave! dicturum. Qui enim voluptatem ipsam contemnunt, iis licet dicere se acupenserem maenae non anteponere. Nondum autem explanatum satis, erat, quid maxime natura vellet. Modo etiam paulum ad dexteram de via declinavi, ut ad Pericli sepulcrum accederem. '
 	          )
 	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'grid', id: 'section-2' },
+	        'Hold here'
 	      )
 	    );
 	  }
@@ -23624,36 +23631,36 @@
 	  value: true
 	});
 
-	var _react = __webpack_require__(6);
+	var _reactRedux = __webpack_require__(180);
 
-	var _react2 = _interopRequireDefault(_react);
+	var _photo_frame = __webpack_require__(218);
+
+	var _photo_frame2 = _interopRequireDefault(_photo_frame);
+
+	var _index = __webpack_require__(209);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var PhotoFrame = _react2.default.createClass({
-	  displayName: 'PhotoFrame',
-	  componentDidMount: function componentDidMount() {
-	    document.addEventListener('scroll', this.handleScroll);
-	  },
-	  componentWillUnmount: function componentWillUnmount() {
-	    document.removeEventListener('scroll', this.handleScroll);
-	  },
-	  handleScroll: function handleScroll() {
-	    var top = document.getElementById(this.props.prevElem).getBoundingClientRect().bottom;
-	    console.log(top);
-	    // When <= 0, photo frame appears, transition fade in
-	    // when > 0 or <= bottom of content block diappears (NEED TO PASS ID OF THAT ELEMENT)
-	  },
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      'Just a little test'
-	    );
-	  }
-	});
+	var mapStateToProps = function mapStateToProps(state) {
+	  return {
+	    state: state
+	  };
+	};
 
-	exports.default = PhotoFrame;
+	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+	  return {
+	    showFrame: function showFrame(id) {
+	      dispatch((0, _index.showFrame)(id));
+	    },
+	    hideFrame: function hideFrame(id) {
+	      dispatch((0, _index.hideFrame)(id));
+	    }
+	  };
+	};
+
+	var PhotoFrameContainer = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_photo_frame2.default);
+
+	exports.default = PhotoFrameContainer;
 
 /***/ },
 /* 214 */
@@ -23895,6 +23902,48 @@
 	});
 
 	exports.default = Footer;
+
+/***/ },
+/* 218 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(6);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var PhotoFrame = _react2.default.createClass({
+	  displayName: 'PhotoFrame',
+	  componentDidMount: function componentDidMount() {
+	    document.addEventListener('scroll', this.handleScroll);
+	  },
+	  componentWillUnmount: function componentWillUnmount() {
+	    document.removeEventListener('scroll', this.handleScroll);
+	  },
+	  handleScroll: function handleScroll() {
+	    var top = document.getElementById(this.props.showAfter).getBoundingClientRect().bottom;
+	    var bottom = document.getElementById(this.props.hideBefore).getBoundingClientRect().top;
+	    console.log("Show at <=0: " + top + "; Hide at <= 0: " + bottom);
+	    // When <= 0, photo frame appears, transition fade in
+	    // when > 0 or <= bottom of content block diappears (NEED TO PASS ID OF THAT ELEMENT)
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { id: "photo-frame-" + this.props.id },
+	      'Just a little test'
+	    );
+	  }
+	});
+
+	exports.default = PhotoFrame;
 
 /***/ }
 /******/ ]);
