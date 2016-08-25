@@ -23155,12 +23155,15 @@
 
 	var initialState = [{
 	  id: 1,
+	  content: 'this is the part that talks about me growing up, dad in GE, learning with QBasic, Visual Basic, C+ and other outdated languages.',
 	  visible: false
 	}, {
 	  id: 2,
+	  content: 'this is the part where I go to West Point, major in History (minor in Computer Science), and prep for a life in the Army.',
 	  visible: false
 	}, {
 	  id: 3,
+	  content: 'this is the part where I\'m in the Army, deploy a few times, and use a photo of me overseas in full battle rattle.',
 	  visible: false
 	}];
 
@@ -23172,6 +23175,7 @@
 	    case 'ADD_FRAME':
 	      return Object.assign({}, state, {
 	        id: action.id,
+	        content: action.content,
 	        visible: false
 	      });
 
