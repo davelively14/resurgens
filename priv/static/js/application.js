@@ -23555,9 +23555,7 @@
 	          'div',
 	          { className: 'grid__item--sm-span-4' },
 	          _react2.default.createElement(_photo_frame_container2.default, {
-	            id: '1',
-	            showAfter: 'about',
-	            hideBefore: 'section-2' })
+	            id: '1' })
 	        ),
 	        _react2.default.createElement(
 	          'div',
@@ -23646,9 +23644,12 @@
 	    document.removeEventListener('scroll', this.handleScroll);
 	  },
 	  handleScroll: function handleScroll() {
-	    var top = document.getElementById(this.props.showAfter).getBoundingClientRect().bottom;
-	    var bottom = document.getElementById(this.props.hideBefore).getBoundingClientRect().top;
-	    console.log("Show at <=0: " + top + "; Hide at <= 0: " + bottom);
+	    var top = document.getElementById("photo-frame-" + this.props.id).getBoundingClientRect().top;
+	    var windowHeight = window.innerHeight;
+
+	    var inRange = top - windowHeight < 1 - 0.4 * windowHeight;
+
+	    console.log(inRange);
 	    // When <= 0, photo frame appears, transition fade in
 	    // when > 0 or <= bottom of content block diappears (NEED TO PASS ID OF THAT ELEMENT)
 	  },
