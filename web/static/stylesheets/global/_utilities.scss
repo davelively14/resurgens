@@ -21,10 +21,17 @@
   font-size: 7vw;
 }
 
-@mixin verticle-align-center() {
+@mixin verticle-align() {
+  display: table;
   display: table-cell;
   vertical-align: middle;
+}
+
+@mixin verticle-align-center() {
+  display: table;
+  display: table-cell;
   text-align: center;
+  vertical-align: middle;
 }
 
 @mixin image-block($url) {
@@ -35,6 +42,7 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  text-align: center;
   @include verticle-align-center;
 }
 

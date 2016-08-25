@@ -23644,12 +23644,20 @@
 	      _react2.default.createElement(
 	        'div',
 	        { className: 'grid__item--md-span-4' },
-	        'Just a little test'
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'photo-frame' },
+	          'Just a little test'
+	        )
 	      ),
 	      _react2.default.createElement(
 	        'div',
-	        { className: 'grid__item--md-span-8 intro-text intro-block' },
-	        record.content
+	        { className: 'grid__item--md-span-8' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'photo-frame-content photo-frame-text' },
+	          record.content
+	        )
 	      )
 	    );
 	  }

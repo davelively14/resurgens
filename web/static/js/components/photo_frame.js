@@ -31,10 +31,14 @@ const PhotoFrame = React.createClass({
     return (
       <div id={"photo-frame-" + this.props.id} className="container grid">
         <div className="grid__item--md-span-4">
-          Just a little test
+          <div className="photo-frame">
+            Just a little test
+          </div>
         </div>
-        <div className="grid__item--md-span-8 intro-text intro-block">
-          {record.content}
+        <div className="grid__item--md-span-8">
+          <div className="photo-frame-content photo-frame-text">
+            {record.content}
+          </div>
         </div>
       </div>
     )

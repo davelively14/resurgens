@@ -47,3 +47,9 @@
   padding: 0 10px;
   background-color: $bg_primary;
 }
+
+// PhotoFrame component properties
+.photo-frame-text {
+  font-size: 2vw;
+  @include font-fam-pri;
+}

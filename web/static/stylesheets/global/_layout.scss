@@ -159,3 +159,19 @@ $menu_height: 40px;
   background-color: $color_alt_4;
   @include verticle-align-center;
 }
+
+// PhotoFrame component properties
+.photo-frame-content {
+  width: 100vw;
+  height: $block_height;
+  background-color: $bg_white;
+  position: relative;
+  padding: 0 2vw;
+  text-align: right;
+  @include verticle-align;
+}
+
+.photo-frame {
+  height: $block_height;
+  @include verticle-align-center;
+}
