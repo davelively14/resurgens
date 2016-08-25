@@ -23554,8 +23554,7 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'grid__item--sm-span-4' },
-	          _react2.default.createElement(_photo_frame_container2.default, {
-	            id: '1' })
+	          _react2.default.createElement(_photo_frame_container2.default, { id: '1' })
 	        ),
 	        _react2.default.createElement(
 	          'div',
@@ -23820,7 +23819,15 @@
 	        _react2.default.createElement(_skill_item2.default, {
 	          imageSrc: '/images/icons/icon_js.png',
 	          link: 'https://www.javascript.com/',
-	          text: 'JavaScript' })
+	          text: 'JavaScript' }),
+	        _react2.default.createElement(_skill_item2.default, {
+	          imageSrc: '/images/icons/icon_git.png',
+	          link: 'https://github.com/davelively14',
+	          text: 'My Github' }),
+	        _react2.default.createElement(_skill_item2.default, {
+	          imageSrc: '/images/icons/icon_li.png',
+	          link: 'https://www.linkedin.com/in/livelydave',
+	          text: 'LinkedIn' })
 	      )
 	    );
 	  }
