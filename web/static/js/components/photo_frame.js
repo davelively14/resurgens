@@ -22,9 +22,20 @@ const PhotoFrame = React.createClass({
   },
 
   render() {
+
+    // Finds the record in the state associated with the id passed by props
+    var record = this.props.state.photoFrames.find(obj => {
+      return obj.id == this.props.id
+    })
+
     return (
-      <div id={"photo-frame-" + this.props.id}>
-        Just a little test
+      <div id={"photo-frame-" + this.props.id} className="container grid">
+        <div className="grid__item--md-span-4">
+          Just a little test
+        </div>
+        <div className="grid__item--md-span-8 intro-text intro-block">
+          {record.content}
+        </div>
       </div>
     )
   }
