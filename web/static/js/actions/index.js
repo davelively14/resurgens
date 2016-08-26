@@ -10,14 +10,14 @@ export const makeUnsticky = () => {
   }
 }
 
-export const showFrame = (id) => {
+export const showPhotoFrame = (id) => {
   return {
     type: 'SHOW_FRAME',
     id
   }
 }
 
-export const hideFrame = (id) => {
+export const hidePhotoFrame = (id) => {
   return {
     type: 'HIDE_FRAME',
     id

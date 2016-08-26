@@ -1,6 +1,6 @@
 import {connect} from 'react-redux'
 import PhotoFrame from '../components/photo_frame'
-import {hideFrame, showFrame} from '../actions/index'
+import {hidePhotoFrame, showPhotoFrame} from '../actions/index'
 
 const mapStateToProps = (state) => {
   return {
@@ -10,11 +10,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    showFrame: (id) => {
-      dispatch(showFrame(id))
+    showPhotoFrame: (id) => {
+      dispatch(showPhotoFrame(id))
     },
-    hideFrame: (id) => {
-      dispatch(hideFrame(id))
+    hidePhotoFrame: (id) => {
+      dispatch(hidePhotoFrame(id))
     }
   }
 }

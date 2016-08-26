@@ -24,7 +24,7 @@
 // Create all the grid elements
 @each $key, $value in $breakpoints {
   @for $i from 1 through $grid_size {
-    .grid__item--#{$key}-span-#{$i} {
+    .grid-item-#{$key}-span-#{$i} {
       flex: 0 0 100%;
       @include break($key) {
         flex: 0 0 #{($i / $grid_size * 100) + "%"};

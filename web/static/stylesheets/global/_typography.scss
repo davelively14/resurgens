@@ -50,6 +50,7 @@
 
 // PhotoFrame component properties
 .photo-frame-text {
+  font-style: italic;
   font-size: 2vw;
   @include font-fam-pri;
 }

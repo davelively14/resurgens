@@ -23155,14 +23155,17 @@
 
 	var initialState = [{
 	  id: 1,
+	  image: '/images/about/three_gens.jpg',
 	  content: 'this is the part that talks about me growing up, dad in GE, learning with QBasic, Visual Basic, C+ and other outdated languages.',
 	  visible: false
 	}, {
 	  id: 2,
+	  image: '/images/about/usma_jeb.jpg',
 	  content: 'this is the part where I go to West Point, major in History (minor in Computer Science), and prep for a life in the Army.',
 	  visible: false
 	}, {
 	  id: 3,
+	  image: '/images/about/army_uh60.jpg',
 	  content: 'this is the part where I\'m in the Army, deploy a few times, and use a photo of me overseas in full battle rattle.',
 	  visible: false
 	}];
@@ -23405,14 +23408,14 @@
 	  };
 	};
 
-	var showFrame = exports.showFrame = function showFrame(id) {
+	var showPhotoFrame = exports.showPhotoFrame = function showPhotoFrame(id) {
 	  return {
 	    type: 'SHOW_FRAME',
 	    id: id
 	  };
 	};
 
-	var hideFrame = exports.hideFrame = function hideFrame(id) {
+	var hidePhotoFrame = exports.hidePhotoFrame = function hidePhotoFrame(id) {
 	  return {
 	    type: 'HIDE_FRAME',
 	    id: id
@@ -23583,11 +23586,11 @@
 
 	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 	  return {
-	    showFrame: function showFrame(id) {
-	      dispatch((0, _index.showFrame)(id));
+	    showPhotoFrame: function showPhotoFrame(id) {
+	      dispatch((0, _index.showPhotoFrame)(id));
 	    },
-	    hideFrame: function hideFrame(id) {
-	      dispatch((0, _index.hideFrame)(id));
+	    hidePhotoFrame: function hidePhotoFrame(id) {
+	      dispatch((0, _index.hidePhotoFrame)(id));
 	    }
 	  };
 	};
@@ -23643,7 +23646,7 @@
 	      { id: "photo-frame-" + this.props.id, className: 'container grid' },
 	      _react2.default.createElement(
 	        'div',
-	        { className: 'grid__item--md-span-4' },
+	        { className: 'grid-item-md-span-4' },
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'photo-frame' },
@@ -23652,7 +23655,7 @@
 	      ),
 	      _react2.default.createElement(
 	        'div',
-	        { className: 'grid__item--md-span-8' },
+	        { className: 'grid-item-md-span-8' },
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'photo-frame-content photo-frame-text' },
