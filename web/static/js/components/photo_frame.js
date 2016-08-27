@@ -2,17 +2,18 @@ import React, {PropTypes} from 'react'
 
 const PhotoFrame = React.createClass({
   componentDidMount() {
-    var record = this.props.state.photoFrames.find(obj => {
-      return obj.id == this.props.id
-    })
-    document.addEventListener('scroll', this.handleScroll(record))
+    document.addEventListener('scroll', this.handleScroll)
   },
 
   componentWillUnmount() {
     document.removeEventListener('scroll', this.handleScroll)
   },
 
-  handleScroll(record) {
+  handleScroll() {
+    var record = this.props.state.photoFrames.find(obj => {
+      return obj.id == this.props.id
+    })
+
     var top = document.getElementById("photo-frame-" + this.props.id).getBoundingClientRect().top
     var windowHeight = window.innerHeight
     var photoVisible = 0.4
@@ -22,14 +23,27 @@ const PhotoFrame = React.createClass({
     var contentInRange = (top - windowHeight < 1 - (contentVisible * windowHeight))
 
     if (photoInRange && !record.img_visible) {
-      this.props.showPhotoFrame(this.props.id)
+      this.props.showPhoto(this.props.id)
     } else if (!photoInRange && record.img_visible) {
-      this.props.hidePhotoFrame(this.props.id)
+      this.props.hidePhoto(this.props.id)
     }
+
+    if (contentInRange && !record.content_visible) {
+      this.props.showContent(this.props.id)
+    } else if (!contentInRange && record.content_visible) {
+      this.props.hideContent(this.props.id)
+    }
+
+    console.log(this.props.id + " image visible: " + record.img_visible);
+    console.log(this.props.id + " content visible: " + record.content_visible);
   },
 
   renderImage() {
     // If this.props.state.img_visible
+  },
+
+  renderContent() {
+    // If this.props.state.content_visible
   },
 
   render() {

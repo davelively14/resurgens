@@ -23149,9 +23149,6 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-
-	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
 	var initialState = [{
 	  id: 1,
 	  image: '/images/about/three_gens.jpg',
@@ -23177,29 +23174,41 @@
 	  var action = arguments[1];
 
 	  switch (action.type) {
-	    case 'ADD_FRAME':
-	      return Object.assign({}, state, {
-	        id: action.id,
-	        content: action.content,
-	        visible: false
-	      });
 
-	    case 'SHOW_FRAME':
-	      if (state.id !== action.id) {
+	    case 'SHOW_PHOTO':
+	      if (state.id != action.id) {
 	        return state;
 	      }
 
 	      return Object.assign({}, state, {
-	        visible: true
+	        img_visible: true
 	      });
 
-	    case 'HIDE_FRAME':
-	      if (state.id !== action.id) {
+	    case 'HIDE_PHOTO':
+	      if (state.id != action.id) {
 	        return state;
 	      }
 
 	      return Object.assign({}, state, {
-	        visible: false
+	        img_visible: false
+	      });
+
+	    case 'SHOW_CONTENT':
+	      if (state.id != action.id) {
+	        return state;
+	      }
+
+	      return Object.assign({}, state, {
+	        content_visible: true
+	      });
+
+	    case 'HIDE_CONTENT':
+	      if (state.id != action.id) {
+	        return state;
+	      }
+
+	      return Object.assign({}, state, {
+	        content_visible: false
 	      });
 
 	    default:
@@ -23212,17 +23221,25 @@
 	  var action = arguments[1];
 
 	  switch (action.type) {
-	    case 'ADD_FRAME':
-	      return [].concat(_toConsumableArray(state), [processFrame(undefined, action)]);
 
-	    case 'SHOW_FRAME':
-	      return state.map(function (frame) {
-	        return processFrame(frame, action);
+	    case 'SHOW_PHOTO':
+	      return state.map(function (photo) {
+	        return processFrame(photo, action);
 	      });
 
-	    case 'HIDE_FRAME':
-	      return state.map(function (frame) {
-	        return processFrame(frame, action);
+	    case 'HIDE_PHOTO':
+	      return state.map(function (photo) {
+	        return processFrame(photo, action);
+	      });
+
+	    case 'SHOW_CONTENT':
+	      return state.map(function (content) {
+	        return processFrame(content, action);
+	      });
+
+	    case 'HIDE_CONTENT':
+	      return state.map(function (content) {
+	        return processFrame(content, action);
 	      });
 
 	    default:
@@ -23410,16 +23427,30 @@
 	  };
 	};
 
-	var showPhotoFrame = exports.showPhotoFrame = function showPhotoFrame(id) {
+	var showPhoto = exports.showPhoto = function showPhoto(id) {
 	  return {
-	    type: 'SHOW_FRAME',
+	    type: 'SHOW_PHOTO',
 	    id: id
 	  };
 	};
 
-	var hidePhotoFrame = exports.hidePhotoFrame = function hidePhotoFrame(id) {
+	var hidePhoto = exports.hidePhoto = function hidePhoto(id) {
 	  return {
-	    type: 'HIDE_FRAME',
+	    type: 'HIDE_PHOTO',
+	    id: id
+	  };
+	};
+
+	var showContent = exports.showContent = function showContent(id) {
+	  return {
+	    type: 'SHOW_CONTENT',
+	    id: id
+	  };
+	};
+
+	var hideContent = exports.hideContent = function hideContent(id) {
+	  return {
+	    type: 'HIDE_CONTENT',
 	    id: id
 	  };
 	};
@@ -23590,11 +23621,17 @@
 
 	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 	  return {
-	    showPhotoFrame: function showPhotoFrame(id) {
-	      dispatch((0, _index.showPhotoFrame)(id));
+	    showPhoto: function showPhoto(id) {
+	      dispatch((0, _index.showPhoto)(id));
 	    },
-	    hidePhotoFrame: function hidePhotoFrame(id) {
-	      dispatch((0, _index.hidePhotoFrame)(id));
+	    hidePhoto: function hidePhoto(id) {
+	      dispatch((0, _index.hidePhoto)(id));
+	    },
+	    showContent: function showContent(id) {
+	      dispatch((0, _index.showContent)(id));
+	    },
+	    hideContent: function hideContent(id) {
+	      dispatch((0, _index.hideContent)(id));
 	    }
 	  };
 	};
@@ -23622,17 +23659,18 @@
 	var PhotoFrame = _react2.default.createClass({
 	  displayName: 'PhotoFrame',
 	  componentDidMount: function componentDidMount() {
+	    document.addEventListener('scroll', this.handleScroll);
+	  },
+	  componentWillUnmount: function componentWillUnmount() {
+	    document.removeEventListener('scroll', this.handleScroll);
+	  },
+	  handleScroll: function handleScroll() {
 	    var _this = this;
 
 	    var record = this.props.state.photoFrames.find(function (obj) {
 	      return obj.id == _this.props.id;
 	    });
-	    document.addEventListener('scroll', this.handleScroll(record));
-	  },
-	  componentWillUnmount: function componentWillUnmount() {
-	    document.removeEventListener('scroll', this.handleScroll);
-	  },
-	  handleScroll: function handleScroll(record) {
+
 	    var top = document.getElementById("photo-frame-" + this.props.id).getBoundingClientRect().top;
 	    var windowHeight = window.innerHeight;
 	    var photoVisible = 0.4;
@@ -23642,13 +23680,25 @@
 	    var contentInRange = top - windowHeight < 1 - contentVisible * windowHeight;
 
 	    if (photoInRange && !record.img_visible) {
-	      this.props.showPhotoFrame(this.props.id);
+	      this.props.showPhoto(this.props.id);
 	    } else if (!photoInRange && record.img_visible) {
-	      this.props.hidePhotoFrame(this.props.id);
+	      this.props.hidePhoto(this.props.id);
 	    }
+
+	    if (contentInRange && !record.content_visible) {
+	      this.props.showContent(this.props.id);
+	    } else if (!contentInRange && record.content_visible) {
+	      this.props.hideContent(this.props.id);
+	    }
+
+	    console.log(this.props.id + " image visible: " + record.img_visible);
+	    console.log(this.props.id + " content visible: " + record.content_visible);
 	  },
 	  renderImage: function renderImage() {
 	    // If this.props.state.img_visible
+	  },
+	  renderContent: function renderContent() {
+	    // If this.props.state.content_visible
 	  },
 	  render: function render() {
 	    var _this2 = this;

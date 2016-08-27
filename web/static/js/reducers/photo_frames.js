@@ -24,29 +24,41 @@ var initialState = [
 
 const processFrame = (state = {}, action) => {
   switch (action.type) {
-    case 'ADD_FRAME':
-      return Object.assign({}, state, {
-        id: action.id,
-        content: action.content,
-        visible: false
-      })
 
-    case 'SHOW_FRAME':
-      if (state.id !== action.id) {
+    case 'SHOW_PHOTO':
+      if (state.id != action.id) {
         return state
       }
 
       return Object.assign({}, state, {
-        visible: true
+        img_visible: true
       })
 
-    case 'HIDE_FRAME':
-      if (state.id !== action.id) {
+    case 'HIDE_PHOTO':
+      if (state.id != action.id) {
         return state
       }
 
       return Object.assign({}, state, {
-        visible: false
+        img_visible: false
+      })
+
+    case 'SHOW_CONTENT':
+      if (state.id != action.id) {
+        return state
+      }
+
+      return Object.assign({}, state, {
+        content_visible: true
+      })
+
+    case 'HIDE_CONTENT':
+      if (state.id != action.id) {
+        return state
+      }
+
+      return Object.assign({}, state, {
+        content_visible: false
       })
 
     default:
@@ -56,17 +68,18 @@ const processFrame = (state = {}, action) => {
 
 const photoFrames = (state = initialState, action) => {
   switch (action.type)  {
-    case 'ADD_FRAME':
-      return [
-        ...state,
-        processFrame(undefined, action)
-      ]
 
-    case 'SHOW_FRAME':
-      return state.map(frame => processFrame(frame, action))
+    case 'SHOW_PHOTO':
+      return state.map(photo => processFrame(photo, action))
 
-    case 'HIDE_FRAME':
-      return state.map(frame => processFrame(frame, action))
+    case 'HIDE_PHOTO':
+      return state.map(photo => processFrame(photo, action))
+
+    case 'SHOW_CONTENT':
+      return state.map(content => processFrame(content, action))
+
+    case 'HIDE_CONTENT':
+      return state.map(content => processFrame(content, action))
 
     default:
       return state
