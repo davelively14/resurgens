@@ -175,11 +175,6 @@ $menu_height: 40px;
   background-color: $bg_white;
   position: relative;
   padding: 0 2vw;
-  // -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-  // -moz-animation: fadein 2s; /* Firefox < 16 */
-  // -ms-animation: fadein 2s; /* Internet Explorer */
-  // -o-animation: fadein 2s; /* Opera < 12.1 */
-  // animation: fadein 2s;
   @include verticle-align;
 }
 

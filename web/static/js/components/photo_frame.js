@@ -36,11 +36,16 @@ const PhotoFrame = React.createClass({
   },
 
   renderImage(record) {
+
+    var animationStyle = {
+      animation: 'fadein 2s ease-in-out, zoomin 3s forwards'
+    }
+
     if (record.img_visible) {
       return (
         <div className="grid-item-md-span-4">
           <div className="photo-frame">
-            <img src={record.image} className="photo" />
+            <img src={record.image} className="photo" style={animationStyle} />
           </div>
         </div>
       )
