@@ -23713,13 +23713,17 @@
 	  renderContent: function renderContent(record) {
 	    console.log(record.content_visible);
 
+	    var animationStyle = {
+	      animation: 'fadein 2s'
+	    };
+
 	    if (record.content_visible) {
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'grid-item-md-span-8' },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'photo-frame-content photo-frame-text text-left' },
+	          { className: 'photo-frame-content photo-frame-text text-left', style: animationStyle },
 	          record.content
 	        )
 	      );

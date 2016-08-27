@@ -59,10 +59,14 @@ const PhotoFrame = React.createClass({
   renderContent(record) {
     console.log(record.content_visible);
 
+    var animationStyle = {
+      animation: 'fadein 2s'
+    }
+
     if (record.content_visible) {
       return (
         <div className="grid-item-md-span-8">
-          <div className="photo-frame-content photo-frame-text text-left">
+          <div className="photo-frame-content photo-frame-text text-left" style={animationStyle}>
             {record.content}
           </div>
         </div>
