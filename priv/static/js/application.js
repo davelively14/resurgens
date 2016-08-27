@@ -23673,8 +23673,8 @@
 
 	    var top = document.getElementById("photo-frame-" + this.props.id).getBoundingClientRect().top;
 	    var windowHeight = window.innerHeight;
-	    var photoVisible = 0.4;
-	    var contentVisible = 0.2;
+	    var photoVisible = 0.6;
+	    var contentVisible = 0.5;
 
 	    var photoInRange = top - windowHeight < 1 - photoVisible * windowHeight;
 	    var contentInRange = top - windowHeight < 1 - contentVisible * windowHeight;
@@ -23690,15 +23690,46 @@
 	    } else if (!contentInRange && record.content_visible) {
 	      this.props.hideContent(this.props.id);
 	    }
+	  },
+	  renderImage: function renderImage(record) {
+	    if (record.img_visible) {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'grid-item-md-span-4' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'photo-frame' },
+	          _react2.default.createElement('img', { src: record.image, className: 'photo' })
+	        )
+	      );
+	    } else {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'grid-item-md-span-4' },
+	        _react2.default.createElement('div', { className: 'photo-frame' })
+	      );
+	    }
+	  },
+	  renderContent: function renderContent(record) {
+	    console.log(record.content_visible);
 
-	    console.log(this.props.id + " image visible: " + record.img_visible);
-	    console.log(this.props.id + " content visible: " + record.content_visible);
-	  },
-	  renderImage: function renderImage() {
-	    // If this.props.state.img_visible
-	  },
-	  renderContent: function renderContent() {
-	    // If this.props.state.content_visible
+	    if (record.content_visible) {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'grid-item-md-span-8' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'photo-frame-content photo-frame-text text-left' },
+	          record.content
+	        )
+	      );
+	    } else {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'grid-item-md-span-8' },
+	        _react2.default.createElement('div', { className: 'photo-frame-content photo-frame-text text-left' })
+	      );
+	    }
 	  },
 	  render: function render() {
 	    var _this2 = this;
@@ -23712,72 +23743,17 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { id: "photo-frame-" + this.props.id, className: 'container grid' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'grid-item-md-span-8' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'photo-frame-content photo-frame-text text-left' },
-	            record.content
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'grid-item-md-span-4' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'photo-frame' },
-	            _react2.default.createElement('img', { src: record.image, className: 'photo' })
-	          )
-	        )
+	        this.renderContent(record),
+	        this.renderImage(record)
 	      );
 	    } else {
 	      return _react2.default.createElement(
 	        'div',
 	        { id: "photo-frame-" + this.props.id, className: 'container grid' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'grid-item-md-span-4' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'photo-frame' },
-	            _react2.default.createElement('img', { src: record.image, className: 'photo' })
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'grid-item-md-span-8' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'photo-frame-content photo-frame-text text-right' },
-	            record.content
-	          )
-	        )
+	        this.renderImage(record),
+	        this.renderContent(record)
 	      );
 	    }
-
-	    return _react2.default.createElement(
-	      'div',
-	      { id: "photo-frame-" + this.props.id, className: 'container grid' },
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'grid-item-md-span-4' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'photo-frame' },
-	          _react2.default.createElement('img', { src: record.image, className: 'photo' })
-	        )
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'grid-item-md-span-8' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'photo-frame-content photo-frame-text' },
-	          record.content
-	        )
-	      )
-	    );
 	  }
 	});
 

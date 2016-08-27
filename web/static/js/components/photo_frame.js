@@ -16,8 +16,8 @@ const PhotoFrame = React.createClass({
 
     var top = document.getElementById("photo-frame-" + this.props.id).getBoundingClientRect().top
     var windowHeight = window.innerHeight
-    var photoVisible = 0.4
-    var contentVisible = 0.2
+    var photoVisible = 0.6
+    var contentVisible = 0.5
 
     var photoInRange = (top - windowHeight < 1 - (photoVisible * windowHeight))
     var contentInRange = (top - windowHeight < 1 - (contentVisible * windowHeight))
@@ -33,21 +33,52 @@ const PhotoFrame = React.createClass({
     } else if (!contentInRange && record.content_visible) {
       this.props.hideContent(this.props.id)
     }
-
-    console.log(this.props.id + " image visible: " + record.img_visible);
-    console.log(this.props.id + " content visible: " + record.content_visible);
   },
 
-  renderImage() {
-    // If this.props.state.img_visible
+  renderImage(record) {
+    if (record.img_visible) {
+      return (
+        <div className="grid-item-md-span-4">
+          <div className="photo-frame">
+            <img src={record.image} className="photo" />
+          </div>
+        </div>
+      )
+    } else {
+      return (
+        <div className="grid-item-md-span-4">
+          <div className="photo-frame">
+
+          </div>
+        </div>
+      )
+    }
+
   },
 
-  renderContent() {
-    // If this.props.state.content_visible
+  renderContent(record) {
+    console.log(record.content_visible);
+
+    if (record.content_visible) {
+      return (
+        <div className="grid-item-md-span-8">
+          <div className="photo-frame-content photo-frame-text text-left">
+            {record.content}
+          </div>
+        </div>
+      )
+    } else {
+      return (
+        <div className="grid-item-md-span-8">
+          <div className="photo-frame-content photo-frame-text text-left">
+
+          </div>
+        </div>
+      )
+    }
   },
 
   render() {
-
     // Finds the record in the state associated with the id passed by props
     var record = this.props.state.photoFrames.find(obj => {
       return obj.id == this.props.id
@@ -56,49 +87,18 @@ const PhotoFrame = React.createClass({
     if (this.props.left === false) {
       return (
         <div id={"photo-frame-" + this.props.id} className="container grid">
-          <div className="grid-item-md-span-8">
-            <div className="photo-frame-content photo-frame-text text-left">
-              {record.content}
-            </div>
-          </div>
-          <div className="grid-item-md-span-4">
-            <div className="photo-frame">
-              <img src={record.image} className="photo" />
-            </div>
-          </div>
+          {this.renderContent(record)}
+          {this.renderImage(record)}
         </div>
       )
     } else {
       return (
         <div id={"photo-frame-" + this.props.id} className="container grid">
-          <div className="grid-item-md-span-4">
-            <div className="photo-frame">
-              <img src={record.image} className="photo" />
-            </div>
-          </div>
-          <div className="grid-item-md-span-8">
-            <div className="photo-frame-content photo-frame-text text-right">
-              {record.content}
-            </div>
-          </div>
+          {this.renderImage(record)}
+          {this.renderContent(record)}
         </div>
       )
     }
-
-    return (
-      <div id={"photo-frame-" + this.props.id} className="container grid">
-        <div className="grid-item-md-span-4">
-          <div className="photo-frame">
-            <img src={record.image} className="photo" />
-          </div>
-        </div>
-        <div className="grid-item-md-span-8">
-          <div className="photo-frame-content photo-frame-text">
-            {record.content}
-          </div>
-        </div>
-      </div>
-    )
   }
 })
 
