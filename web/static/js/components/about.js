@@ -9,7 +9,8 @@ const About = React.createClass({
           <span className="image-text">About Me</span>
         </div>
         <PhotoFrameContainer id="1" />
-        
+        <PhotoFrameContainer id="2" left={false} />
+        <PhotoFrameContainer id="3" />
       </div>
     )
   }

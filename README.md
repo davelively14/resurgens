@@ -23,6 +23,8 @@ Current version on [github](https://github.com/davelively14/resurgens): 0.1c
     - Link to source code (use github icon)
     - Link to slideshow of functioning site? Or deploy actual site to a subdirectory?
 - Remove skills section, but include SkillItems in portfolio
+- Develop naming convention for reducers
+  - Plural or singular?
 
 ## Changelog
 

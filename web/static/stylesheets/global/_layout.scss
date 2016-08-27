@@ -160,6 +160,14 @@ $menu_height: 40px;
   @include verticle-align-center;
 }
 
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
 // PhotoFrame component properties
 .photo-frame-content {
   width: 100vw;
@@ -167,11 +175,15 @@ $menu_height: 40px;
   background-color: $bg_white;
   position: relative;
   padding: 0 2vw;
-  text-align: right;
   @include verticle-align;
 }
 
 .photo-frame {
   height: $block_height;
   @include verticle-align-center;
+}
+
+.photo {
+  width: 80%;
+  max-height: 100%;
 }

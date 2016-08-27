@@ -1,24 +1,35 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 
 const PhotoFrame = React.createClass({
-
   componentDidMount() {
-    document.addEventListener('scroll', this.handleScroll)
+    var record = this.props.state.photoFrames.find(obj => {
+      return obj.id == this.props.id
+    })
+    document.addEventListener('scroll', this.handleScroll(record))
   },
 
   componentWillUnmount() {
     document.removeEventListener('scroll', this.handleScroll)
   },
 
-  handleScroll() {
+  handleScroll(record) {
     var top = document.getElementById("photo-frame-" + this.props.id).getBoundingClientRect().top
     var windowHeight = window.innerHeight
+    var photoVisible = 0.4
+    var contentVisible = 0.2
 
-    var inRange = (top - windowHeight < 1 - (0.4 * windowHeight))
+    var photoInRange = (top - windowHeight < 1 - (photoVisible * windowHeight))
+    var contentInRange = (top - windowHeight < 1 - (contentVisible * windowHeight))
 
-    console.log(inRange);
-    // When <= 0, photo frame appears, transition fade in
-    // when > 0 or <= bottom of content block diappears (NEED TO PASS ID OF THAT ELEMENT)
+    if (photoInRange && !record.img_visible) {
+      this.props.showPhotoFrame(this.props.id)
+    } else if (!photoInRange && record.img_visible) {
+      this.props.hidePhotoFrame(this.props.id)
+    }
+  },
+
+  renderImage() {
+    // If this.props.state.img_visible
   },
 
   render() {
@@ -28,11 +39,43 @@ const PhotoFrame = React.createClass({
       return obj.id == this.props.id
     })
 
+    if (this.props.left === false) {
+      return (
+        <div id={"photo-frame-" + this.props.id} className="container grid">
+          <div className="grid-item-md-span-8">
+            <div className="photo-frame-content photo-frame-text text-left">
+              {record.content}
+            </div>
+          </div>
+          <div className="grid-item-md-span-4">
+            <div className="photo-frame">
+              <img src={record.image} className="photo" />
+            </div>
+          </div>
+        </div>
+      )
+    } else {
+      return (
+        <div id={"photo-frame-" + this.props.id} className="container grid">
+          <div className="grid-item-md-span-4">
+            <div className="photo-frame">
+              <img src={record.image} className="photo" />
+            </div>
+          </div>
+          <div className="grid-item-md-span-8">
+            <div className="photo-frame-content photo-frame-text text-right">
+              {record.content}
+            </div>
+          </div>
+        </div>
+      )
+    }
+
     return (
       <div id={"photo-frame-" + this.props.id} className="container grid">
         <div className="grid-item-md-span-4">
           <div className="photo-frame">
-            Just a little test
+            <img src={record.image} className="photo" />
           </div>
         </div>
         <div className="grid-item-md-span-8">
@@ -44,5 +87,10 @@ const PhotoFrame = React.createClass({
     )
   }
 })
+
+PhotoFrame.propTypes = {
+  id: PropTypes.string.isRequired,
+  left: PropTypes.bool
+}
 
 export default PhotoFrame
