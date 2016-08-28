@@ -9,19 +9,29 @@ Current version on [github](https://github.com/davelively14/resurgens): 0.1c
 
 #### v0.2 Todo
 
-- Write up About Me
-  - Timeline
-  - Photo frame will follow the page on the way down, flip from side to side
-    - Charlotte
-    - West Point
-    - Savannah / Iraq
-    - Recruiting
-    - Programming
+- PhotoFrame: add content for
+  - Charlotte: growing up
+  - West Point: minored in CS, completed my thesis using ActionScript to develop a training module for FAR
+  - In the Army: deployed to Iraq thrice
+  - Recruiting: Built successful recruiting teams
+  - Programming: My true passion
 - Portfolio
-  - Show projects, but use SkillItems next to the project to indicate tech used
+  - Show projects:
+    - Locorum (Elixir/Phoenix, JS)
+      - Website (https://boiling-beach-47326.herokuapp.com/)
+    - BitPress (php)
+      - Website (http://www.love-atl.com/)
+    - Rumbl (Elixir/Phoenix, JS)
+      - Slideshow
+    - Homespun (Rails)
+      - Slideshow
+    - estuk (Rails)
+      - Slideshow
+    - stuckdo (Rails)
+      - Slideshow
   - Projects listed one by one
     - Link to source code (use github icon)
-    - Link to slideshow of functioning site? Or deploy actual site to a subdirectory?
+    - Link to slideshow of functioning site? Or deploy actual site to a subdirectory? Both.
 - Remove skills section, but include SkillItems in portfolio
 - Develop naming convention for reducers
   - Plural or singular?
@@ -32,3 +42,5 @@ Current version on [github](https://github.com/davelively14/resurgens): 0.1c
 
 - Portfolio
   - Moved to second spot
+- About Me
+  - Built PhotoFrame components
