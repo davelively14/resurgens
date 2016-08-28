@@ -1,9 +1,9 @@
 # Resurgens
 
-My website with portfolio.
+This is my personal website, displaying my portfolio, background, and contact information. I have used Elixir/Phoenix for the backend and ReactJS with Redux for the front end. I have created each React component from scratch, complete with CSS styling for animation and formatting.
 
 Current release version: n/a
-Current version on [github](https://github.com/davelively14/resurgens): 0.1c
+Current version on [github](https://github.com/davelively14/resurgens): 0.2d
 
 ## Todo
 
@@ -35,6 +35,7 @@ Current version on [github](https://github.com/davelively14/resurgens): 0.1c
 - Remove skills section, but include SkillItems in portfolio
 - Develop naming convention for reducers
   - Plural or singular?
+- Deploy
 
 ## Changelog
 
