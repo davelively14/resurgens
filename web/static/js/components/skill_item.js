@@ -16,6 +16,7 @@ const SkillItem = React.createClass({
 
 SkillItem.propTypes = {
   imageSrc: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired
 }
 

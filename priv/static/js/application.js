@@ -23944,6 +23944,7 @@
 
 	SkillItem.propTypes = {
 	  imageSrc: _react.PropTypes.string.isRequired,
+	  link: _react.PropTypes.string.isRequired,
 	  text: _react.PropTypes.string.isRequired
 	};
 
