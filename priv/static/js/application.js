@@ -23893,7 +23893,11 @@
 	        _react2.default.createElement(_skill_item2.default, {
 	          imageSrc: '/images/icons/icon_li.png',
 	          link: 'https://www.linkedin.com/in/livelydave',
-	          text: 'LinkedIn' })
+	          text: 'LinkedIn' }),
+	        _react2.default.createElement(_skill_item2.default, {
+	          imageSrc: '/images/icons/icon_mail.png',
+	          link: 'mailto:info@resurgens.io',
+	          text: 'Email' })
 	      )
 	    );
 	  }

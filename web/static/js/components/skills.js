@@ -45,6 +45,10 @@ const Skills = React.createClass({
             imageSrc="/images/icons/icon_li.png"
             link="https://www.linkedin.com/in/livelydave"
             text="LinkedIn" />
+          <SkillItem
+            imageSrc="/images/icons/icon_mail.png"
+            link="mailto:info@resurgens.io"
+            text="Email" />
         </div>
       </div>
     )
