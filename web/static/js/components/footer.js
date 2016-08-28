@@ -4,7 +4,7 @@ const Footer = React.createClass({
   render() {
     return (
       <div className="footer-block" id="footer">
-        <span className="footer-text">Temporary holding text</span>
+        <span className="footer-text">Temporary holding text, will contain contact information</span>
       </div>
     )
   }

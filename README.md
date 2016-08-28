@@ -37,6 +37,11 @@ Current version on [github](https://github.com/davelively14/resurgens): 0.2d
   - Plural or singular?
 - Deploy
 
+#### v0.3 Todo
+- ERRATA: responsiveness
+  - Photos don't zoom well on mobile. Expands, but behind other elements
+  - Menu looks sloppy. Orange breaks up.
+
 ## Changelog
 
 #### v0.2

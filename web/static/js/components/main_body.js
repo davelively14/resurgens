@@ -8,7 +8,7 @@ const MainBody = React.createClass({
     return (
       <div className="main" id="main">
         <div className="intro-block">
-          <span className="intro-text">This is a placeholder for all of this, but what happens if we have to wrap this text. And then we wrap it again? Does it all work?</span>
+          <span className="intro-text">Welcome to my personal website. In the interest of showcasing my abilities, I created this from scratch - no bootstrap, no foundation, not even jQuery. Instead, I used two amazing frameworks: Phoenix and Elixir for the backend, ReacJS and Redux for the frontend.</span>
         </div>
         <Portfolio />
         <About />
