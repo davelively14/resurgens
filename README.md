@@ -22,16 +22,24 @@ Current version on [github](https://github.com/davelively14/resurgens): 0.2d
   - Show projects:
     - Locorum (Elixir/Phoenix, JS)
       - Website (https://boiling-beach-47326.herokuapp.com/)
+      - Github: https://github.com/davelively14/locorum
     - BitPress (php)
       - Website (http://www.love-atl.com/)
+      - Github: https://github.com/davelively14/BITPress
     - Rumbl (Elixir/Phoenix, JS)
       - Slideshow
+      - Github: https://github.com/davelively14/homespun
     - Homespun (Rails)
       - Slideshow
+      - Github: https://github.com/davelively14/homespun
     - estuk (Rails)
       - Slideshow
+      - Github: https://github.com/davelively14/estuk
     - stuckdo (Rails)
       - Slideshow
+      - Github: https://github.com/davelively14/stuckdo
+    - resurgens (Elixir/Phoenix, ReactJS/Redux)
+      - Just github: https://github.com/davelively14/resurgens
   - Projects listed one by one
     - Link to source code (use github icon)
     - Link to slideshow of functioning site? Or deploy actual site to a subdirectory? Both.
