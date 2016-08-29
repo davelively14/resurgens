@@ -44,6 +44,7 @@ Current version on [github](https://github.com/davelively14/resurgens): 0.2d
 - ERRATA: responsiveness
   - Photos don't zoom well on mobile. Expands, but behind other elements
   - Menu looks sloppy. Orange breaks up.
+  - Contact info: text and icon may appear on different lines. Block maybe?
 - REFACTOR: naming
   - Change PhotoFrame to Story
   - Change PhotoFrames to Stories
