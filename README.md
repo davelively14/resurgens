@@ -9,6 +9,9 @@ Current version on [github](https://github.com/davelively14/resurgens): 0.2d
 
 #### v0.2 Todo
 
+- About Me
+  - Add: Traditional path tongue in cheek
+  - Add: Self-taught the modern web
 - PhotoFrame: add content for
   - Charlotte: growing up
   - West Point: minored in CS, completed my thesis using ActionScript to develop a training module for FAR
@@ -33,8 +36,6 @@ Current version on [github](https://github.com/davelively14/resurgens): 0.2d
     - Link to source code (use github icon)
     - Link to slideshow of functioning site? Or deploy actual site to a subdirectory? Both.
 - Remove skills section, but include SkillItems in portfolio
-- Footer
-  - Add contact information
 - Develop naming convention for reducers
   - Plural or singular?
 - Deploy
@@ -46,6 +47,8 @@ Current version on [github](https://github.com/davelively14/resurgens): 0.2d
 - REFACTOR: naming
   - Change PhotoFrame to Story
   - Change PhotoFrames to Stories
+- IMPROVE: footer
+  - Zoom should apply to both image and text elements on hover
 
 ## Changelog
 
@@ -55,3 +58,5 @@ Current version on [github](https://github.com/davelively14/resurgens): 0.2d
   - Moved to second spot
 - About Me
   - Built PhotoFrame components
+- Footer
+  - Added contact information

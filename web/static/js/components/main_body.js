@@ -8,7 +8,7 @@ const MainBody = React.createClass({
     return (
       <div className="main" id="main">
         <div className="intro-block">
-          <span className="intro-text">Welcome to my personal website. In the interest of showcasing my abilities, I created this from scratch - no bootstrap, no foundation, not even jQuery. Instead, I used two amazing frameworks: Phoenix and Elixir for the backend, ReacJS and Redux for the frontend.</span>
+          <span className="intro-text">So that subtitle is a bit dramatic. I'm not introducing anything as revolutionary as an improved wheel, but I did implement this site without the aid of Bootstrap, jQuery, or any other library of eye candy goodness. Just Phoenix and Elixir on the backend, ReactJS and Redux on the front, where every component is my own design. Why? So I can learn.</span>
         </div>
         <Portfolio />
         <About />

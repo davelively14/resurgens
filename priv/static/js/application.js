@@ -23489,7 +23489,7 @@
 	        _react2.default.createElement(
 	          "div",
 	          { className: "subtitle-skew" },
-	          "This tagline is temporary."
+	          "The wheel, reimagined."
 	        )
 	      )
 	    );
@@ -23538,7 +23538,7 @@
 	        _react2.default.createElement(
 	          'span',
 	          { className: 'intro-text' },
-	          'Welcome to my personal website. In the interest of showcasing my abilities, I created this from scratch - no bootstrap, no foundation, not even jQuery. Instead, I used two amazing frameworks: Phoenix and Elixir for the backend, ReacJS and Redux for the frontend.'
+	          'So that subtitle is a bit dramatic. I\'m not introducing anything as revolutionary as an improved wheel, but I did implement this site without the aid of Bootstrap, jQuery, or any other library of eye candy goodness. Just Phoenix and Elixir on the backend, ReactJS and Redux on the front, where every component is my own design. Why? So I can learn.'
 	        )
 	      ),
 	      _react2.default.createElement(_portfolio2.default, null),
@@ -23885,19 +23885,7 @@
 	        _react2.default.createElement(_skill_item2.default, {
 	          imageSrc: '/images/icons/icon_js.png',
 	          link: 'https://www.javascript.com/',
-	          text: 'JavaScript' }),
-	        _react2.default.createElement(_skill_item2.default, {
-	          imageSrc: '/images/icons/icon_git.png',
-	          link: 'https://github.com/davelively14',
-	          text: 'My Github' }),
-	        _react2.default.createElement(_skill_item2.default, {
-	          imageSrc: '/images/icons/icon_li.png',
-	          link: 'https://www.linkedin.com/in/livelydave',
-	          text: 'LinkedIn' }),
-	        _react2.default.createElement(_skill_item2.default, {
-	          imageSrc: '/images/icons/icon_mail.png',
-	          link: 'mailto:info@resurgens.io',
-	          text: 'Email' })
+	          text: 'JavaScript' })
 	      )
 	    );
 	  }
@@ -23954,6 +23942,60 @@
 /* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(6);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _contact_item = __webpack_require__(219);
+
+	var _contact_item2 = _interopRequireDefault(_contact_item);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Footer = _react2.default.createClass({
+	  displayName: 'Footer',
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'footer-block', id: 'footer' },
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'footer-text' },
+	        'I\'d love to get your questions, comments, and feedback!'
+	      ),
+	      _react2.default.createElement('br', null),
+	      _react2.default.createElement(_contact_item2.default, {
+	        imageSrc: '/images/icons/icon_mail.png',
+	        link: 'mailto:dlively@resurgens.io?subject=Your%20website',
+	        text: 'Email Dave' }),
+	      _react2.default.createElement(_contact_item2.default, {
+	        imageSrc: '/images/icons/icon_git.png',
+	        link: 'https://github.com/davelively14',
+	        text: 'View Github' }),
+	      _react2.default.createElement(_contact_item2.default, {
+	        imageSrc: '/images/icons/icon_twitter.png',
+	        link: 'https://twitter.com/RealDaveLively',
+	        text: 'Twitter' }),
+	      _react2.default.createElement(_contact_item2.default, {
+	        imageSrc: '/images/icons/icon_li.png',
+	        link: 'https://www.linkedin.com/in/livelydave',
+	        text: 'View LinkedIn' })
+	    );
+	  }
+	});
+
+	exports.default = Footer;
+
+/***/ },
+/* 219 */
+/***/ function(module, exports, __webpack_require__) {
+
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
@@ -23966,22 +24008,33 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Footer = _react2.default.createClass({
-	  displayName: "Footer",
+	var ContactItem = _react2.default.createClass({
+	  displayName: "ContactItem",
 	  render: function render() {
 	    return _react2.default.createElement(
-	      "div",
-	      { className: "footer-block", id: "footer" },
+	      "span",
+	      null,
 	      _react2.default.createElement(
-	        "span",
-	        { className: "footer-text" },
-	        "Temporary holding text, will contain contact information"
+	        "a",
+	        { href: this.props.link, target: "_blank" },
+	        _react2.default.createElement("img", { src: this.props.imageSrc, alt: this.props.text + " icon", className: "contact-icon zoom" }),
+	        _react2.default.createElement(
+	          "span",
+	          { className: "contact-icon-label zoom" },
+	          this.props.text
+	        )
 	      )
 	    );
 	  }
 	});
 
-	exports.default = Footer;
+	ContactItem.propTypes = {
+	  imageSrc: _react.PropTypes.string.isRequired,
+	  text: _react.PropTypes.string.isRequired,
+	  link: _react.PropTypes.string.isRequired
+	};
+
+	exports.default = ContactItem;
 
 /***/ }
 /******/ ]);

@@ -108,6 +108,11 @@ $block_height: 30vw;
   margin: 20px 20px 10px 20px;
 }
 
+.contact-icon {
+  width: 30px;
+  margin: 0 10px;
+}
+
 .zoom {
   transition: all .2s ease-in-out;
 }
@@ -120,6 +125,13 @@ $block_height: 30vw;
   @include font-fam-pri;
   color: white;
   padding: 0 10px;
+}
+
+.contact-icon-label {
+  @include font-fam-pri;
+  @include verticle-align;
+  color: white;
+  padding: 10px 10px 10px 0;
 }
 
 .container {
@@ -152,6 +164,7 @@ $menu_height: 40px;
 
 // Footer properties
 .footer-block {
+  display: table;
   width: 100vw;
   height: 100px;
   position: relative;

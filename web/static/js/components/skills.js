@@ -37,18 +37,6 @@ const Skills = React.createClass({
             imageSrc="/images/icons/icon_js.png"
             link="https://www.javascript.com/"
             text="JavaScript" />
-          <SkillItem
-            imageSrc="/images/icons/icon_git.png"
-            link="https://github.com/davelively14"
-            text="My Github" />
-          <SkillItem
-            imageSrc="/images/icons/icon_li.png"
-            link="https://www.linkedin.com/in/livelydave"
-            text="LinkedIn" />
-          <SkillItem
-            imageSrc="/images/icons/icon_mail.png"
-            link="mailto:info@resurgens.io"
-            text="Email" />
         </div>
       </div>
     )
