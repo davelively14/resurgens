@@ -12,12 +12,12 @@ Current version on [github](https://github.com/davelively14/resurgens): 0.2d
 - About Me
   - Add: Traditional path tongue in cheek
   - Add: Self-taught the modern web
-- PhotoFrame: add content for
-  - Charlotte: growing up
-  - West Point: minored in CS, completed my thesis using ActionScript to develop a training module for FAR
-  - In the Army: deployed to Iraq thrice
-  - Recruiting: Built successful recruiting teams
-  - Programming: My true passion
+  - Add: content
+    - Charlotte: growing up
+    - West Point: minored in CS, completed my thesis using ActionScript to develop a training module for FAR
+    - In the Army: deployed to Iraq thrice
+    - Recruiting: Built successful recruiting teams
+    - Programming: My true passion
 - Portfolio
   - Show projects:
     - Locorum (Elixir/Phoenix, JS)
