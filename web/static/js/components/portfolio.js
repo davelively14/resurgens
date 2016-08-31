@@ -8,8 +8,8 @@ const Portfolio = React.createClass({
         <div className="image-block-portfolio" id="portfolio">
           <span className="image-text">My Portfolio</span>
         </div>
-        <PortfolioItemContainer />
-        <PortfolioItemContainer />
+        <PortfolioItemContainer id="1" />
+        <PortfolioItemContainer id="2" />
       </div>
     )
   }

@@ -23084,11 +23084,16 @@
 
 	var _photo_frames2 = _interopRequireDefault(_photo_frames);
 
+	var _portfolio_items = __webpack_require__(222);
+
+	var _portfolio_items2 = _interopRequireDefault(_portfolio_items);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var resurgensApp = (0, _redux.combineReducers)({
 	  menu: _menu2.default,
-	  photoFrames: _photo_frames2.default
+	  photoFrames: _photo_frames2.default,
+	  portfolioItems: _portfolio_items2.default
 	});
 
 	exports.default = resurgensApp;
@@ -23823,8 +23828,8 @@
 	          'My Portfolio'
 	        )
 	      ),
-	      _react2.default.createElement(_portfolio_item_container2.default, null),
-	      _react2.default.createElement(_portfolio_item_container2.default, null)
+	      _react2.default.createElement(_portfolio_item_container2.default, { id: '1' }),
+	      _react2.default.createElement(_portfolio_item_container2.default, { id: '2' })
 	    );
 	  }
 	});
@@ -24120,6 +24125,87 @@
 	};
 
 	exports.default = ContactItem;
+
+/***/ },
+/* 222 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var initialState = [{
+	  id: 1,
+	  image: 'tbd',
+	  title: 'Locorum',
+	  description: 'Created this website to Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest? Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo. Totum autem id externum est, et quod externum, id in casu est. Ut nemo dubitet, eorum omnia officia quo spectare, quid sequi, quid fugere debeant? Ille enim occurrentia nescio quae comminiscebatur;',
+	  git_link: 'https://github.com/davelively14/locorum',
+	  example_link: 'https://boiling-beach-47326.herokuapp.com/',
+	  example_text: 'website',
+	  visible: false
+	}, {
+	  id: 2,
+	  image: 'tbd',
+	  title: 'BitPress',
+	  description: 'Used for ATL-Love to Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest? Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo. Totum autem id externum est, et quod externum, id in casu est. Ut nemo dubitet, eorum omnia officia quo spectare, quid sequi, quid fugere debeant? Ille enim occurrentia nescio quae comminiscebatur;',
+	  git_link: 'https://github.com/davelively14/BITPress',
+	  example_link: 'http://www.love-atl.com/',
+	  example_text: 'website',
+	  visible: false
+	}];
+
+	var processItem = function processItem() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+	  var action = arguments[1];
+
+	  switch (action.type) {
+
+	    case 'SHOW_PORTFOLIO':
+	      if (state.id != action.id) {
+	        return state;
+	      }
+
+	      return Object.assign({}, state, {
+	        visible: true
+	      });
+
+	    case 'HIDE_PORTFOLIO':
+	      if (state.id != action.id) {
+	        return state;
+	      }
+
+	      return Object.assign({}, state, {
+	        visible: false
+	      });
+
+	    default:
+	      return state;
+	  }
+	};
+
+	var portfolioItems = function portfolioItems() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? initialState : arguments[0];
+	  var action = arguments[1];
+
+	  switch (action.type) {
+
+	    case 'SHOW_PORTFOLIO':
+	      return state.map(function (portfolio) {
+	        return processItem(portfolio, action);
+	      });
+
+	    case 'HIDE_PORTFOLIO':
+	      return state.map(function (portfolio) {
+	        return processItem(portfolio, action);
+	      });
+
+	    default:
+	      return state;
+	  }
+	};
+
+	exports.default = portfolioItems;
 
 /***/ }
 /******/ ]);
