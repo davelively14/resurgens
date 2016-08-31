@@ -23276,7 +23276,7 @@
 
 	var _main_body2 = _interopRequireDefault(_main_body);
 
-	var _footer = __webpack_require__(218);
+	var _footer = __webpack_require__(220);
 
 	var _footer2 = _interopRequireDefault(_footer);
 
@@ -23534,7 +23534,7 @@
 
 	var _portfolio2 = _interopRequireDefault(_portfolio);
 
-	var _skills = __webpack_require__(216);
+	var _skills = __webpack_require__(218);
 
 	var _skills2 = _interopRequireDefault(_skills);
 
@@ -23802,7 +23802,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _portfolio_item_container = __webpack_require__(220);
+	var _portfolio_item_container = __webpack_require__(216);
 
 	var _portfolio_item_container2 = _interopRequireDefault(_portfolio_item_container);
 
@@ -23841,11 +23841,85 @@
 	  value: true
 	});
 
+	var _reactRedux = __webpack_require__(180);
+
+	var _portfolio_item = __webpack_require__(217);
+
+	var _portfolio_item2 = _interopRequireDefault(_portfolio_item);
+
+	var _index = __webpack_require__(209);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var mapStateToProps = function mapStateToProps(state) {
+	  return {
+	    state: state
+	  };
+	};
+
+	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+	  return {
+	    showPortfolio: function showPortfolio(id) {
+	      dispatch((0, _index.showPortfolio)(id));
+	    },
+	    hidePortfolio: function hidePortfolio(id) {
+	      dispatch((0, _index.hidePortfolio)(id));
+	    }
+	  };
+	};
+
+	var PortfolioItemContainer = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_portfolio_item2.default);
+
+	exports.default = PortfolioItemContainer;
+
+/***/ },
+/* 217 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	var _react = __webpack_require__(6);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _skill_item = __webpack_require__(217);
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var PortfolioItem = _react2.default.createClass({
+	  displayName: "PortfolioItem",
+	  render: function render() {
+	    return _react2.default.createElement(
+	      "div",
+	      { className: "content-block" },
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest? Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo. Totum autem id externum est, et quod externum, id in casu est. Ut nemo dubitet, eorum omnia officia quo spectare, quid sequi, quid fugere debeant? Ille enim occurrentia nescio quae comminiscebatur; Duo Reges: constructio interrete. Ergo omni animali illud, quod appetiti positum est in eo, quod naturae est accommodatum. Non risu potius quam oratione eiciendum? Primum non saepe, deinde quae est ista relaxatio, cum et praeteriti doloris memoria recens est et futuri atque inpendentis torquet timor? Etsi qui potest intellegi aut cogitari esse aliquod animal, quod se oderit? Experiamur igitur, inquit, etsi habet haec Stoicorum ratio difficilius quiddam et obscurius. Te autem hortamur omnes, currentem quidem, ut spero, ut eos, quos novisse vis, imitari etiam velis. "
+	      )
+	    );
+	  }
+	});
+
+	exports.default = PortfolioItem;
+
+/***/ },
+/* 218 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(6);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _skill_item = __webpack_require__(219);
 
 	var _skill_item2 = _interopRequireDefault(_skill_item);
 
@@ -23905,7 +23979,7 @@
 	exports.default = Skills;
 
 /***/ },
-/* 217 */
+/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -23950,7 +24024,7 @@
 	exports.default = SkillItem;
 
 /***/ },
-/* 218 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23963,7 +24037,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _contact_item = __webpack_require__(219);
+	var _contact_item = __webpack_require__(221);
 
 	var _contact_item2 = _interopRequireDefault(_contact_item);
 
@@ -24004,7 +24078,7 @@
 	exports.default = Footer;
 
 /***/ },
-/* 219 */
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -24046,80 +24120,6 @@
 	};
 
 	exports.default = ContactItem;
-
-/***/ },
-/* 220 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _reactRedux = __webpack_require__(180);
-
-	var _portfolio_item = __webpack_require__(221);
-
-	var _portfolio_item2 = _interopRequireDefault(_portfolio_item);
-
-	var _index = __webpack_require__(209);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var mapStateToProps = function mapStateToProps(state) {
-	  return {
-	    state: state
-	  };
-	};
-
-	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-	  return {
-	    showPortfolio: function showPortfolio(id) {
-	      dispatch((0, _index.showPortfolio)(id));
-	    },
-	    hidePortfolio: function hidePortfolio(id) {
-	      dispatch((0, _index.hidePortfolio)(id));
-	    }
-	  };
-	};
-
-	var PortfolioItemContainer = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_portfolio_item2.default);
-
-	exports.default = PortfolioItemContainer;
-
-/***/ },
-/* 221 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(6);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var PortfolioItem = _react2.default.createClass({
-	  displayName: "PortfolioItem",
-	  render: function render() {
-	    return _react2.default.createElement(
-	      "div",
-	      { className: "content-block" },
-	      _react2.default.createElement(
-	        "p",
-	        null,
-	        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest? Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo. Totum autem id externum est, et quod externum, id in casu est. Ut nemo dubitet, eorum omnia officia quo spectare, quid sequi, quid fugere debeant? Ille enim occurrentia nescio quae comminiscebatur; Duo Reges: constructio interrete. Ergo omni animali illud, quod appetiti positum est in eo, quod naturae est accommodatum. Non risu potius quam oratione eiciendum? Primum non saepe, deinde quae est ista relaxatio, cum et praeteriti doloris memoria recens est et futuri atque inpendentis torquet timor? Etsi qui potest intellegi aut cogitari esse aliquod animal, quod se oderit? Experiamur igitur, inquit, etsi habet haec Stoicorum ratio difficilius quiddam et obscurius. Te autem hortamur omnes, currentem quidem, ut spero, ut eos, quos novisse vis, imitari etiam velis. "
-	      )
-	    );
-	  }
-	});
-
-	exports.default = PortfolioItem;
 
 /***/ }
 /******/ ]);
