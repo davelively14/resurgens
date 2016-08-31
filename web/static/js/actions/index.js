@@ -37,3 +37,17 @@ export const hideContent = (id) => {
     id
   }
 }
+
+export const showPortfolio = (id) => {
+  return {
+    type: 'SHOW_PORTFOLIO',
+    id
+  }
+}
+
+export const hidePortfolio = (id) => {
+  return {
+    type: 'HIDE_PORTFOLIO',
+    id
+  }
+}
