@@ -11,8 +11,8 @@ const PortfolioItem = React.createClass({
       <div className="content-block">
         <h3>{record.title}</h3>
         <p>{record.description}</p>
-        <Button link={record.example_link} caption="Example" />
-        <Button link={record.git_link} caption="View on Github" />
+        <Button link={record.example_link} caption="example" />
+        <Button link={record.git_link} caption="github" icon="/images/icons/icon_git.png" />
       </div>
     )
   }

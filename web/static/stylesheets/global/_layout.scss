@@ -205,5 +205,21 @@ $menu_height: 40px;
 .button {
   padding: 2px 5px;
   margin: 0px 5px;
-  background-color: $color_alt_2;
+  border-style: solid;
+  border-width: 3px;
+  border-color: $color_alt_4;
+  background-color: $color_primary;
+}
+
+.button:hover {
+  border-color: $color_alt_3;
+  border-width: 1px;
+  padding: 4px 7px;
+}
+
+.button-icon {
+  height: 15px;
+  margin: 0 5px 0 0;
+  -webkit-filter: brightness(0%);
+  filter: saturate(0%);
 }

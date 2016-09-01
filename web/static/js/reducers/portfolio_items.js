@@ -15,7 +15,7 @@ var initialState = [
     title: 'BitPress',
     description: `Used for ATL-Love to Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest? Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo. Totum autem id externum est, et quod externum, id in casu est. Ut nemo dubitet, eorum omnia officia quo spectare, quid sequi, quid fugere debeant? Ille enim occurrentia nescio quae comminiscebatur;`,
     git_link: `https://github.com/davelively14/BITPress`,
-    example_link: `http://www.love-atl.com/`,
+    example_link: `http://www.love-atl.com/concerts/lone-bellow-comes-back-atlanta/`,
     example_text: `website`,
     visible: false
   },

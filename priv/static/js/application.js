@@ -23917,8 +23917,8 @@
 	        null,
 	        record.description
 	      ),
-	      _react2.default.createElement(_button2.default, { link: record.example_link, caption: 'Example' }),
-	      _react2.default.createElement(_button2.default, { link: record.git_link, caption: 'View on Github' })
+	      _react2.default.createElement(_button2.default, { link: record.example_link, caption: 'example' }),
+	      _react2.default.createElement(_button2.default, { link: record.git_link, caption: 'github', icon: '/images/icons/icon_git.png' })
 	    );
 	  }
 	});
@@ -24165,7 +24165,7 @@
 	  title: 'BitPress',
 	  description: 'Used for ATL-Love to Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest? Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo. Totum autem id externum est, et quod externum, id in casu est. Ut nemo dubitet, eorum omnia officia quo spectare, quid sequi, quid fugere debeant? Ille enim occurrentia nescio quae comminiscebatur;',
 	  git_link: 'https://github.com/davelively14/BITPress',
-	  example_link: 'http://www.love-atl.com/',
+	  example_link: 'http://www.love-atl.com/concerts/lone-bellow-comes-back-atlanta/',
 	  example_text: 'website',
 	  visible: false
 	}];
@@ -24240,6 +24240,13 @@
 
 	var Button = _react2.default.createClass({
 	  displayName: "Button",
+	  renderIcon: function renderIcon() {
+	    if (this.props.icon) {
+	      return _react2.default.createElement("img", { src: this.props.icon, className: "button-icon" });
+	    } else {
+	      return undefined;
+	    }
+	  },
 	  render: function render() {
 	    return _react2.default.createElement(
 	      "span",
@@ -24247,6 +24254,7 @@
 	      _react2.default.createElement(
 	        "a",
 	        { href: this.props.link, target: "_blank" },
+	        this.renderIcon(),
 	        this.props.caption
 	      )
 	    );
