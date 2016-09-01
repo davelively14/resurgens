@@ -23894,18 +23894,24 @@
 	var PortfolioItem = _react2.default.createClass({
 	  displayName: "PortfolioItem",
 	  render: function render() {
+	    var _this = this;
+
+	    var record = this.props.state.portfolioItems.find(function (obj) {
+	      return obj.id == _this.props.id;
+	    });
+
 	    return _react2.default.createElement(
 	      "div",
 	      { className: "content-block" },
 	      _react2.default.createElement(
 	        "h3",
 	        null,
-	        this.props.title
+	        record.title
 	      ),
 	      _react2.default.createElement(
 	        "p",
 	        null,
-	        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest? Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo. Totum autem id externum est, et quod externum, id in casu est. Ut nemo dubitet, eorum omnia officia quo spectare, quid sequi, quid fugere debeant? Ille enim occurrentia nescio quae comminiscebatur; Duo Reges: constructio interrete. Ergo omni animali illud, quod appetiti positum est in eo, quod naturae est accommodatum. Non risu potius quam oratione eiciendum? Primum non saepe, deinde quae est ista relaxatio, cum et praeteriti doloris memoria recens est et futuri atque inpendentis torquet timor? Etsi qui potest intellegi aut cogitari esse aliquod animal, quod se oderit? Experiamur igitur, inquit, etsi habet haec Stoicorum ratio difficilius quiddam et obscurius. Te autem hortamur omnes, currentem quidem, ut spero, ut eos, quos novisse vis, imitari etiam velis. "
+	        record.description
 	      )
 	    );
 	  }
