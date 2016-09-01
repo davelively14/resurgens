@@ -23736,8 +23736,6 @@
 	    }
 	  },
 	  renderContent: function renderContent(record) {
-	    console.log(record.content_visible);
-
 	    var animationStyle = {
 	      animation: 'fadein 2s'
 	    };
@@ -23899,6 +23897,11 @@
 	    return _react2.default.createElement(
 	      "div",
 	      { className: "content-block" },
+	      _react2.default.createElement(
+	        "h3",
+	        null,
+	        this.props.title
+	      ),
 	      _react2.default.createElement(
 	        "p",
 	        null,

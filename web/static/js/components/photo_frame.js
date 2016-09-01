@@ -62,8 +62,6 @@ const PhotoFrame = React.createClass({
   },
 
   renderContent(record) {
-    console.log(record.content_visible);
-
     var animationStyle = {
       animation: 'fadein 2s'
     }
