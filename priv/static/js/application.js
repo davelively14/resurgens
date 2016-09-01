@@ -23879,7 +23879,7 @@
 /* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -23889,10 +23889,14 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _button = __webpack_require__(223);
+
+	var _button2 = _interopRequireDefault(_button);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var PortfolioItem = _react2.default.createClass({
-	  displayName: "PortfolioItem",
+	  displayName: 'PortfolioItem',
 	  render: function render() {
 	    var _this = this;
 
@@ -23901,18 +23905,20 @@
 	    });
 
 	    return _react2.default.createElement(
-	      "div",
-	      { className: "content-block" },
+	      'div',
+	      { className: 'content-block' },
 	      _react2.default.createElement(
-	        "h3",
+	        'h3',
 	        null,
 	        record.title
 	      ),
 	      _react2.default.createElement(
-	        "p",
+	        'p',
 	        null,
 	        record.description
-	      )
+	      ),
+	      _react2.default.createElement(_button2.default, { link: record.example_link, caption: 'Example' }),
+	      _react2.default.createElement(_button2.default, { link: record.git_link, caption: 'View on Github' })
 	    );
 	  }
 	});
@@ -24215,6 +24221,39 @@
 	};
 
 	exports.default = portfolioItems;
+
+/***/ },
+/* 223 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(6);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Button = _react2.default.createClass({
+	  displayName: "Button",
+	  render: function render() {
+	    return _react2.default.createElement(
+	      "span",
+	      { className: "button" },
+	      _react2.default.createElement(
+	        "a",
+	        { href: this.props.link, target: "_blank" },
+	        this.props.caption
+	      )
+	    );
+	  }
+	});
+
+	exports.default = Button;
 
 /***/ }
 /******/ ]);
