@@ -8,11 +8,16 @@ const PortfolioItem = React.createClass({
     })
 
     return (
-      <div className="content-block">
-        <h3>{record.title}</h3>
-        <p>{record.description}</p>
-        <Button link={record.example_link} caption="example" />
-        <Button link={record.git_link} caption="github" icon="/images/icons/icon_git.png" />
+      <div className="grid container">
+        <div className="grid-item-md-span-4 photo-frame-text">
+          Image goes here
+        </div>
+        <div className="grid-item-md-span-8 content-block">
+          <h3>{record.title}</h3>
+          <p>{record.description}</p>
+          <Button link={record.example_link} caption="example" />
+          <Button link={record.git_link} caption="github" icon="/images/icons/icon_git.png" />
+        </div>
       </div>
     )
   }

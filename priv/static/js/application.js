@@ -77,7 +77,7 @@
 
 	var _index2 = _interopRequireDefault(_index);
 
-	var _app = __webpack_require__(206);
+	var _app = __webpack_require__(207);
 
 	var _app2 = _interopRequireDefault(_app);
 
@@ -23084,7 +23084,7 @@
 
 	var _photo_frames2 = _interopRequireDefault(_photo_frames);
 
-	var _portfolio_items = __webpack_require__(222);
+	var _portfolio_items = __webpack_require__(206);
 
 	var _portfolio_items2 = _interopRequireDefault(_portfolio_items);
 
@@ -23257,6 +23257,87 @@
 
 /***/ },
 /* 206 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var initialState = [{
+	  id: 1,
+	  image: 'tbd',
+	  title: 'Locorum',
+	  description: 'Created this website to Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest? Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo. Totum autem id externum est, et quod externum, id in casu est. Ut nemo dubitet, eorum omnia officia quo spectare, quid sequi, quid fugere debeant? Ille enim occurrentia nescio quae comminiscebatur;',
+	  git_link: 'https://github.com/davelively14/locorum',
+	  example_link: 'https://boiling-beach-47326.herokuapp.com/',
+	  example_text: 'website',
+	  visible: false
+	}, {
+	  id: 2,
+	  image: 'tbd',
+	  title: 'BitPress',
+	  description: 'Used for ATL-Love to Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest? Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo. Totum autem id externum est, et quod externum, id in casu est. Ut nemo dubitet, eorum omnia officia quo spectare, quid sequi, quid fugere debeant? Ille enim occurrentia nescio quae comminiscebatur;',
+	  git_link: 'https://github.com/davelively14/BITPress',
+	  example_link: 'http://www.love-atl.com/concerts/lone-bellow-comes-back-atlanta/',
+	  example_text: 'website',
+	  visible: false
+	}];
+
+	var processItem = function processItem() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+	  var action = arguments[1];
+
+	  switch (action.type) {
+
+	    case 'SHOW_PORTFOLIO':
+	      if (state.id != action.id) {
+	        return state;
+	      }
+
+	      return Object.assign({}, state, {
+	        visible: true
+	      });
+
+	    case 'HIDE_PORTFOLIO':
+	      if (state.id != action.id) {
+	        return state;
+	      }
+
+	      return Object.assign({}, state, {
+	        visible: false
+	      });
+
+	    default:
+	      return state;
+	  }
+	};
+
+	var portfolioItems = function portfolioItems() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? initialState : arguments[0];
+	  var action = arguments[1];
+
+	  switch (action.type) {
+
+	    case 'SHOW_PORTFOLIO':
+	      return state.map(function (portfolio) {
+	        return processItem(portfolio, action);
+	      });
+
+	    case 'HIDE_PORTFOLIO':
+	      return state.map(function (portfolio) {
+	        return processItem(portfolio, action);
+	      });
+
+	    default:
+	      return state;
+	  }
+	};
+
+	exports.default = portfolioItems;
+
+/***/ },
+/* 207 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23269,19 +23350,19 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _menu_container = __webpack_require__(207);
+	var _menu_container = __webpack_require__(208);
 
 	var _menu_container2 = _interopRequireDefault(_menu_container);
 
-	var _bg_header = __webpack_require__(210);
+	var _bg_header = __webpack_require__(211);
 
 	var _bg_header2 = _interopRequireDefault(_bg_header);
 
-	var _main_body = __webpack_require__(211);
+	var _main_body = __webpack_require__(212);
 
 	var _main_body2 = _interopRequireDefault(_main_body);
 
-	var _footer = __webpack_require__(220);
+	var _footer = __webpack_require__(222);
 
 	var _footer2 = _interopRequireDefault(_footer);
 
@@ -23301,7 +23382,7 @@
 	exports.default = App;
 
 /***/ },
-/* 207 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23312,11 +23393,11 @@
 
 	var _reactRedux = __webpack_require__(180);
 
-	var _menu = __webpack_require__(208);
+	var _menu = __webpack_require__(209);
 
 	var _menu2 = _interopRequireDefault(_menu);
 
-	var _index = __webpack_require__(209);
+	var _index = __webpack_require__(210);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23343,7 +23424,7 @@
 	exports.default = MenuContainer;
 
 /***/ },
-/* 208 */
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23413,7 +23494,7 @@
 	exports.default = Menu;
 
 /***/ },
-/* 209 */
+/* 210 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23476,7 +23557,7 @@
 	};
 
 /***/ },
-/* 210 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -23518,7 +23599,7 @@
 	exports.default = BgHeader;
 
 /***/ },
-/* 211 */
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23531,15 +23612,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _about = __webpack_require__(212);
+	var _about = __webpack_require__(213);
 
 	var _about2 = _interopRequireDefault(_about);
 
-	var _portfolio = __webpack_require__(215);
+	var _portfolio = __webpack_require__(216);
 
 	var _portfolio2 = _interopRequireDefault(_portfolio);
 
-	var _skills = __webpack_require__(218);
+	var _skills = __webpack_require__(220);
 
 	var _skills2 = _interopRequireDefault(_skills);
 
@@ -23570,7 +23651,7 @@
 	exports.default = MainBody;
 
 /***/ },
-/* 212 */
+/* 213 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23583,7 +23664,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _photo_frame_container = __webpack_require__(213);
+	var _photo_frame_container = __webpack_require__(214);
 
 	var _photo_frame_container2 = _interopRequireDefault(_photo_frame_container);
 
@@ -23614,7 +23695,7 @@
 	exports.default = About;
 
 /***/ },
-/* 213 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23625,11 +23706,11 @@
 
 	var _reactRedux = __webpack_require__(180);
 
-	var _photo_frame = __webpack_require__(214);
+	var _photo_frame = __webpack_require__(215);
 
 	var _photo_frame2 = _interopRequireDefault(_photo_frame);
 
-	var _index = __webpack_require__(209);
+	var _index = __webpack_require__(210);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23661,7 +23742,7 @@
 	exports.default = PhotoFrameContainer;
 
 /***/ },
-/* 214 */
+/* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23792,7 +23873,7 @@
 	exports.default = PhotoFrame;
 
 /***/ },
-/* 215 */
+/* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23805,7 +23886,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _portfolio_item_container = __webpack_require__(216);
+	var _portfolio_item_container = __webpack_require__(217);
 
 	var _portfolio_item_container2 = _interopRequireDefault(_portfolio_item_container);
 
@@ -23835,7 +23916,7 @@
 	exports.default = Portfolio;
 
 /***/ },
-/* 216 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23846,11 +23927,11 @@
 
 	var _reactRedux = __webpack_require__(180);
 
-	var _portfolio_item = __webpack_require__(217);
+	var _portfolio_item = __webpack_require__(218);
 
 	var _portfolio_item2 = _interopRequireDefault(_portfolio_item);
 
-	var _index = __webpack_require__(209);
+	var _index = __webpack_require__(210);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23876,7 +23957,7 @@
 	exports.default = PortfolioItemContainer;
 
 /***/ },
-/* 217 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23889,7 +23970,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _button = __webpack_require__(223);
+	var _button = __webpack_require__(219);
 
 	var _button2 = _interopRequireDefault(_button);
 
@@ -23906,19 +23987,28 @@
 
 	    return _react2.default.createElement(
 	      'div',
-	      { className: 'content-block' },
+	      { className: 'grid container' },
 	      _react2.default.createElement(
-	        'h3',
-	        null,
-	        record.title
+	        'div',
+	        { className: 'grid-item-md-span-4 photo-frame-text' },
+	        'Image goes here'
 	      ),
 	      _react2.default.createElement(
-	        'p',
-	        null,
-	        record.description
-	      ),
-	      _react2.default.createElement(_button2.default, { link: record.example_link, caption: 'example' }),
-	      _react2.default.createElement(_button2.default, { link: record.git_link, caption: 'github', icon: '/images/icons/icon_git.png' })
+	        'div',
+	        { className: 'grid-item-md-span-8 content-block' },
+	        _react2.default.createElement(
+	          'h3',
+	          null,
+	          record.title
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          record.description
+	        ),
+	        _react2.default.createElement(_button2.default, { link: record.example_link, caption: 'example' }),
+	        _react2.default.createElement(_button2.default, { link: record.git_link, caption: 'github', icon: '/images/icons/icon_git.png' })
+	      )
 	    );
 	  }
 	});
@@ -23926,7 +24016,48 @@
 	exports.default = PortfolioItem;
 
 /***/ },
-/* 218 */
+/* 219 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(6);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Button = _react2.default.createClass({
+	  displayName: "Button",
+	  renderIcon: function renderIcon() {
+	    if (this.props.icon) {
+	      return _react2.default.createElement("img", { src: this.props.icon, className: "button-icon" });
+	    } else {
+	      return undefined;
+	    }
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(
+	      "span",
+	      { className: "button" },
+	      _react2.default.createElement(
+	        "a",
+	        { href: this.props.link, target: "_blank" },
+	        this.renderIcon(),
+	        this.props.caption
+	      )
+	    );
+	  }
+	});
+
+	exports.default = Button;
+
+/***/ },
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23939,7 +24070,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _skill_item = __webpack_require__(219);
+	var _skill_item = __webpack_require__(221);
 
 	var _skill_item2 = _interopRequireDefault(_skill_item);
 
@@ -23999,7 +24130,7 @@
 	exports.default = Skills;
 
 /***/ },
-/* 219 */
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -24044,7 +24175,7 @@
 	exports.default = SkillItem;
 
 /***/ },
-/* 220 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24057,7 +24188,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _contact_item = __webpack_require__(221);
+	var _contact_item = __webpack_require__(223);
 
 	var _contact_item2 = _interopRequireDefault(_contact_item);
 
@@ -24098,7 +24229,7 @@
 	exports.default = Footer;
 
 /***/ },
-/* 221 */
+/* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -24140,128 +24271,6 @@
 	};
 
 	exports.default = ContactItem;
-
-/***/ },
-/* 222 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var initialState = [{
-	  id: 1,
-	  image: 'tbd',
-	  title: 'Locorum',
-	  description: 'Created this website to Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest? Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo. Totum autem id externum est, et quod externum, id in casu est. Ut nemo dubitet, eorum omnia officia quo spectare, quid sequi, quid fugere debeant? Ille enim occurrentia nescio quae comminiscebatur;',
-	  git_link: 'https://github.com/davelively14/locorum',
-	  example_link: 'https://boiling-beach-47326.herokuapp.com/',
-	  example_text: 'website',
-	  visible: false
-	}, {
-	  id: 2,
-	  image: 'tbd',
-	  title: 'BitPress',
-	  description: 'Used for ATL-Love to Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest? Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo. Totum autem id externum est, et quod externum, id in casu est. Ut nemo dubitet, eorum omnia officia quo spectare, quid sequi, quid fugere debeant? Ille enim occurrentia nescio quae comminiscebatur;',
-	  git_link: 'https://github.com/davelively14/BITPress',
-	  example_link: 'http://www.love-atl.com/concerts/lone-bellow-comes-back-atlanta/',
-	  example_text: 'website',
-	  visible: false
-	}];
-
-	var processItem = function processItem() {
-	  var state = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-	  var action = arguments[1];
-
-	  switch (action.type) {
-
-	    case 'SHOW_PORTFOLIO':
-	      if (state.id != action.id) {
-	        return state;
-	      }
-
-	      return Object.assign({}, state, {
-	        visible: true
-	      });
-
-	    case 'HIDE_PORTFOLIO':
-	      if (state.id != action.id) {
-	        return state;
-	      }
-
-	      return Object.assign({}, state, {
-	        visible: false
-	      });
-
-	    default:
-	      return state;
-	  }
-	};
-
-	var portfolioItems = function portfolioItems() {
-	  var state = arguments.length <= 0 || arguments[0] === undefined ? initialState : arguments[0];
-	  var action = arguments[1];
-
-	  switch (action.type) {
-
-	    case 'SHOW_PORTFOLIO':
-	      return state.map(function (portfolio) {
-	        return processItem(portfolio, action);
-	      });
-
-	    case 'HIDE_PORTFOLIO':
-	      return state.map(function (portfolio) {
-	        return processItem(portfolio, action);
-	      });
-
-	    default:
-	      return state;
-	  }
-	};
-
-	exports.default = portfolioItems;
-
-/***/ },
-/* 223 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(6);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Button = _react2.default.createClass({
-	  displayName: "Button",
-	  renderIcon: function renderIcon() {
-	    if (this.props.icon) {
-	      return _react2.default.createElement("img", { src: this.props.icon, className: "button-icon" });
-	    } else {
-	      return undefined;
-	    }
-	  },
-	  render: function render() {
-	    return _react2.default.createElement(
-	      "span",
-	      { className: "button" },
-	      _react2.default.createElement(
-	        "a",
-	        { href: this.props.link, target: "_blank" },
-	        this.renderIcon(),
-	        this.props.caption
-	      )
-	    );
-	  }
-	});
-
-	exports.default = Button;
 
 /***/ }
 /******/ ]);
