@@ -9,8 +9,10 @@ const PortfolioItem = React.createClass({
 
     return (
       <div className="grid container">
-        <div className="grid-item-md-span-4 photo-frame-text">
-          Image goes here
+        <div className="grid-item-md-span-4">
+          <div className="portfolio-item-content">
+            <h2>Image goes here</h2>
+          </div>
         </div>
         <div className="grid-item-md-span-8 content-block">
           <h3>{record.title}</h3>

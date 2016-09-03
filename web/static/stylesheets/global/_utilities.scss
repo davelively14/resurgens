@@ -21,13 +21,13 @@
   font-size: 7vw;
 }
 
-@mixin verticle-align() {
+@mixin vertical-align() {
   display: table;
   display: table-cell;
   vertical-align: middle;
 }
 
-@mixin verticle-align-center() {
+@mixin vertical-align-center() {
   display: table;
   display: table-cell;
   text-align: center;
@@ -43,7 +43,7 @@
   background-position: center;
   background-attachment: fixed;
   text-align: center;
-  @include verticle-align-center;
+  @include vertical-align-center;
 }
 
 // - - - - - - - - - - - - - - - - - - -

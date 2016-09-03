@@ -23990,8 +23990,16 @@
 	      { className: 'grid container' },
 	      _react2.default.createElement(
 	        'div',
-	        { className: 'grid-item-md-span-4 photo-frame-text' },
-	        'Image goes here'
+	        { className: 'grid-item-md-span-4' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'portfolio-item-content' },
+	          _react2.default.createElement(
+	            'h2',
+	            null,
+	            'Image goes here'
+	          )
+	        )
 	      ),
 	      _react2.default.createElement(
 	        'div',
