@@ -33,6 +33,10 @@
   font-size: 5vw;
   color: $alternate_text;
   text-shadow: 0.1vw 0.1vw black;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-color: $alternate_text;
+  border-width: 2px;
 }
 
 .footer-text {
