@@ -11,7 +11,7 @@ const PortfolioItem = React.createClass({
       <div className="grid container">
         <div className="grid-item-md-span-4">
           <div className="portfolio-item-content">
-            <h2>Image goes here</h2>
+            <img src={record.image} className="portfolio-image zoom" />
           </div>
         </div>
         <div className="grid-item-md-span-8 content-block">

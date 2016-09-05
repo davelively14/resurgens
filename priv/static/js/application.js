@@ -23266,7 +23266,7 @@
 	});
 	var initialState = [{
 	  id: 1,
-	  image: 'tbd',
+	  image: '/images/screenshots/ss_locorum.jpg',
 	  title: 'Locorum',
 	  description: 'Created this website to Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest? Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo. Totum autem id externum est, et quod externum, id in casu est. Ut nemo dubitet, eorum omnia officia quo spectare, quid sequi, quid fugere debeant? Ille enim occurrentia nescio quae comminiscebatur;',
 	  git_link: 'https://github.com/davelively14/locorum',
@@ -23275,7 +23275,7 @@
 	  visible: false
 	}, {
 	  id: 2,
-	  image: 'tbd',
+	  image: '/images/screenshots/ss_locorum.jpg',
 	  title: 'BitPress',
 	  description: 'Used for ATL-Love to Lorem ipsum dolor sit amet, consectetur adipiscing elit. Summus dolor plures dies manere non potest? Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo. Totum autem id externum est, et quod externum, id in casu est. Ut nemo dubitet, eorum omnia officia quo spectare, quid sequi, quid fugere debeant? Ille enim occurrentia nescio quae comminiscebatur;',
 	  git_link: 'https://github.com/davelively14/BITPress',
@@ -23994,11 +23994,7 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'portfolio-item-content' },
-	          _react2.default.createElement(
-	            'h2',
-	            null,
-	            'Image goes here'
-	          )
+	          _react2.default.createElement('img', { src: record.image, className: 'portfolio-image zoom' })
 	        )
 	      ),
 	      _react2.default.createElement(
