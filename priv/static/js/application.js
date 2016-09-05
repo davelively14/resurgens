@@ -23987,7 +23987,7 @@
 
 	    return _react2.default.createElement(
 	      'div',
-	      { className: 'grid container' },
+	      { className: 'grid container portfolio-item-container' },
 	      _react2.default.createElement(
 	        'div',
 	        { className: 'grid-item-md-span-4' },
