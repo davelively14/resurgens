@@ -28,7 +28,7 @@ Current version on [github](https://github.com/davelively14/resurgens): 0.2d
       - Github: https://github.com/davelively14/BITPress
     - Rumbl (Elixir/Phoenix, JS)
       - Slideshow
-      - Github: https://github.com/davelively14/homespun
+      - Github: https://github.com/davelively14/rumbl
     - Homespun (Rails)
       - Slideshow
       - Github: https://github.com/davelively14/homespun

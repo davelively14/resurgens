@@ -203,7 +203,7 @@ $menu_height: 40px;
 
 // PortfolioItem component properties
 .portfolio-item-container {
-  padding: 50px 0 0 0;
+  padding: 50px 0;
 }
 
 .portfolio-item-content {
@@ -216,7 +216,7 @@ $menu_height: 40px;
 }
 
 .portfolio-image {
-  width: 15vw;
+  width: 18vw;
   display: flex;
   align-items: center;
   // display: block;

@@ -10,6 +10,7 @@ const Portfolio = React.createClass({
         </div>
         <PortfolioItemContainer id="1" />
         <PortfolioItemContainer id="2" />
+        <PortfolioItemContainer id="3" />
       </div>
     )
   }
